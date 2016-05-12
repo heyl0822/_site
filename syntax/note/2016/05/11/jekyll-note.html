@@ -8,7 +8,7 @@
 
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico?">
   <title>Jekyll Note</title>
-  <meta name="description" content="It starts from choosing platform. It will be easier if I simply choose a blog host and just writing things down with UI, but I also want to add code and math...">
+  <meta name="description" content="I start at choosing platform. It will be easier if I simply choose a blog host, but I also want to add code and math, so I did a little bit research. I tried...">
 
   <link rel="stylesheet" href="/_site//css/main.css">
   <link rel="canonical" href="http://heyl0822.github.io//_site//syntax/note/2016/05/11/jekyll-note.html">
@@ -182,11 +182,11 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>It starts from choosing platform. It will be easier if I simply choose a blog host and just writing things down with UI, but I also want to add code and math, so I did a little bit research. I tried Logdown, but it is not as fast as I want. I also found Farbox that is a Chinese app, it may good for Chinese, but for me it doesn’t like my gmail account. (Sometime I really hate how goverment and enterprise mess things up, but sometime also appreciate it protects something. So I decide to not touch them at this time and focus playing technical stuff until I am more mature.) Ok, back to the topic, I decide to use jekll mainly because of <a href="https://aerotwist.com/">Aerotwist’s</a> suggestion and want to learn the structure of building a static website.</p>
+    <p>I start at choosing platform. It will be easier if I simply choose a blog host, but I also want to add code and math, so I did a little bit research. I tried Logdown, but it is not as fast as I want. I also found Farbox which is a Chinese application, it doesn’t like my gmail account. So I decide to use learn more about the structure of static website.</p>
 
 <h3 id="quickstart">Quickstart</h3>
 
-<p>I first download and follow the steps shown on line:</p>
+<p>Download and follow the steps shown on line:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>~ $ gem install jekyll
 ~ $ jekyll new learn-blog
@@ -195,12 +195,24 @@
 </code></pre>
 </div>
 
-<p>I add a file with format <code class="highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> under <code class="highlighter-rouge">_posts</code> directory.</p>
+<p>Add a file with format <code class="highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> under <code class="highlighter-rouge">_posts</code> directory.</p>
 
-<h3 id="editing-format">Editing Format</h3>
+<h3 id="file-format">File Format</h3>
 
-<p>I change the blog title inside <code class="highlighter-rouge">_config.yml</code> file, and can always run <code class="highlighter-rouge">jekll serve</code> to rebuild the whole site.</p>
+<h6 id="add-link">Add Link</h6>
 
+<p>Original jekyll format .md <a href="https://yanlinghe.com/s/2016-05-11-jekyll-note.md">file</a> download:</p>
+
+<h3 id="code-format">Code Format</h3>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+    <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+  <span class="k">end</span>
+  <span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
+  <span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span>
+  </code></pre></figure>
+
+<h3 id="math-format">Math Format</h3>
 
   </div>
 
