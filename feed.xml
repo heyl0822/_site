@@ -6,24 +6,9 @@
 </description>
     <link>http://heyl0822.github.io//_site//</link>
     <atom:link href="http://heyl0822.github.io//_site//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 12 May 2016 15:26:48 -0700</pubDate>
-    <lastBuildDate>Thu, 12 May 2016 15:26:48 -0700</lastBuildDate>
+    <pubDate>Thu, 12 May 2016 18:15:47 -0700</pubDate>
+    <lastBuildDate>Thu, 12 May 2016 18:15:47 -0700</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
-    
-      <item>
-        <title>Daily Update</title>
-        <description>
-</description>
-        <pubDate>Thu, 12 May 2016 15:25:01 -0700</pubDate>
-        <link>http://heyl0822.github.io//_site//daily/update/2016/05/12/daily-update.html</link>
-        <guid isPermaLink="true">http://heyl0822.github.io//_site//daily/update/2016/05/12/daily-update.html</guid>
-        
-        
-        <category>daily</category>
-        
-        <category>update</category>
-        
-      </item>
     
       <item>
         <title>Markdown Note</title>
@@ -121,8 +106,8 @@ Looks good!&lt;/p&gt;
 &lt;p&gt;You can write bare URLs or email addresses by enclosing them in angle brackets:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;My web site is at &lt;a href=&quot;http://www.markdownpro.com&quot;&gt;http://www.markdownpro.com&lt;/a&gt;&lt;br /&gt;
-My email address is: &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#115;&amp;#117;&amp;#112;&amp;#112;&amp;#111;&amp;#114;&amp;#116;&amp;#064;&amp;#109;&amp;#097;&amp;#114;&amp;#107;&amp;#100;&amp;#111;&amp;#119;&amp;#110;&amp;#112;&amp;#114;&amp;#111;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;&amp;#115;&amp;#117;&amp;#112;&amp;#112;&amp;#111;&amp;#114;&amp;#116;&amp;#064;&amp;#109;&amp;#097;&amp;#114;&amp;#107;&amp;#100;&amp;#111;&amp;#119;&amp;#110;&amp;#112;&amp;#114;&amp;#111;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;My web site is at &lt;a href=&quot;http://www.yanlinghe.com&quot;&gt;http://www.yanlinghe.com&lt;/a&gt;
+My email address is: &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#104;&amp;#064;&amp;#121;&amp;#097;&amp;#110;&amp;#108;&amp;#105;&amp;#110;&amp;#103;&amp;#104;&amp;#101;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;&amp;#104;&amp;#064;&amp;#121;&amp;#097;&amp;#110;&amp;#108;&amp;#105;&amp;#110;&amp;#103;&amp;#104;&amp;#101;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h1 id=&quot;images&quot;&gt;Images&lt;/h1&gt;
@@ -137,7 +122,7 @@ My email address is: &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&a
 
 &lt;p&gt;To make a special section, indent four spaces:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;NOTE: This is some other cool stuff we can do with Markdown PRO! 
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;NOTE: This is some other cool stuff we can do!
        Of course, it can be a paragraph inside a note.
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -203,9 +188,9 @@ My email address is: &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&a
 
 &lt;h3 id=&quot;file-format&quot;&gt;File Format&lt;/h3&gt;
 
-&lt;h6 id=&quot;add-link&quot;&gt;Add Link&lt;/h6&gt;
-
-&lt;p&gt;Original jekyll format .md &lt;a href=&quot;https://yanlinghe.com/s/2016-05-11-jekyll-note.md&quot;&gt;file&lt;/a&gt; download:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Add Link:&lt;/strong&gt; Original jekyll format .md &lt;a href=&quot;https://yanlinghe.com/s/2016-05-11-jekyll-note.md&quot;&gt;file&lt;/a&gt; download:&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h3 id=&quot;code-format&quot;&gt;Code Format&lt;/h3&gt;
 
@@ -216,7 +201,6 @@ My email address is: &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&a
   &lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &#39;Hi, Tom&#39; to STDOUT.&lt;/span&gt;
   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h3 id=&quot;math-format&quot;&gt;Math Format&lt;/h3&gt;
 </description>
         <pubDate>Wed, 11 May 2016 10:41:01 -0700</pubDate>
         <link>http://heyl0822.github.io//_site//syntax/note/2016/05/11/jekyll-note.html</link>
