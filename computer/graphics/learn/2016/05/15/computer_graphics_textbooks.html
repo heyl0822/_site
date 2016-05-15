@@ -7,11 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico?">
-  <title>Jekyll Note</title>
-  <meta name="description" content="I start at choosing platform. It will be easier if I simply choose a blog host, but I also want to add code and math, so I did a little bit research. I tried...">
+  <title>Computer Graphics Textbooks</title>
+  <meta name="description" content="Peter Shirley, Fundamentals of Computer Graphics">
 
   <link rel="stylesheet" href="/_site//css/main.css">
-  <link rel="canonical" href="http://heyl0822.github.io//_site//syntax/note/2016/05/11/jekyll-note.html">
+  <link rel="canonical" href="http://heyl0822.github.io//_site//computer/graphics/learn/2016/05/15/computer_graphics_textbooks.html">
   <link rel="alternate" type="application/rss+xml" title="Yanling's Blog" href="http://heyl0822.github.io//_site//feed.xml">
 </head>
 
@@ -177,75 +177,32 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Jekyll Note</h1>
-    <p class="post-meta"><time datetime="2016-05-11T10:41:01-07:00" itemprop="datePublished">May 11, 2016</time></p>
+    <h1 class="post-title" itemprop="name headline">Computer Graphics Textbooks</h1>
+    <p class="post-meta"><time datetime="2016-05-15T04:50:52-07:00" itemprop="datePublished">May 15, 2016</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>I start at choosing platform. It will be easier if I simply choose a blog host, but I also want to add code and math, so I did a little bit research. I tried Logdown, but it is not as fast as I want. I also found Farbox which is a Chinese application, it doesn’t like my gmail account. So I decide to use learn more about the structure of static website.</p>
+    <p><a href="http://www.amazon.com/Fundamentals-Computer-Graphics-Fourth-Marschner/dp/1482229390/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1463339799&amp;sr=1-1&amp;keywords=Fundamentals+of+Computer+Graphics">Peter Shirley, Fundamentals of Computer Graphics</a></p>
 
-<h3 id="quickstart">Quickstart</h3>
+<p><a href="http://www.amazon.com/dp/0133574849/ref=pd_lpo_sbs_dp_ss_1/187-7197181-7650716?pf_rd_m=ATVPDKIKX0DER&amp;pf_rd_s=lpo-top-stripe-1&amp;pf_rd_r=09PT16E5FRBFGP7WNC3X&amp;pf_rd_t=201&amp;pf_rd_p=1944687582&amp;pf_rd_i=0132545233">Edward Angel, Interactive Computer Graphics</a></p>
 
-<p>Download and follow the steps shown on line:</p>
+<p><a href="http://www.amazon.com/Computer-Graphics-3rd-Alan-Watt/dp/0201398559">Alan Watt, 3D Computer Graphics</a></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>~ $ gem install jekyll
-~ $ jekyll new learn-blog
-~ $ cd learn-blog
-~/my-awesome-site $ jekyll serve
-</code></pre>
-</div>
+<p><a href="http://www.amazon.com/OpenGL-Programming-Guide-Official-Learning/dp/0321773039">Dave Shreiner, OpenGL Programming Guide</a></p>
 
-<p>Add a file with format <code class="highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> under <code class="highlighter-rouge">_posts</code> directory.</p>
+<p><a href="http://www.amazon.com/Real-Time-Rendering-Third-Tomas-Akenine-Moller/dp/1568814240">T. Akenine-Moller et al., Real-Time Rendering</a></p>
 
-<h3 id="file-format">File Format</h3>
+<p><a href="http://www.amazon.com/Scientific-Computing-Michael-T-Heath/dp/0072399104">Heath, Scientific Computing</a></p>
 
-<ul>
-  <li><strong>Add Link:</strong> Original jekyll format .md <a href="https://yanlinghe.com/s/2016-05-11-jekyll-note.md">file</a> download:</li>
-</ul>
+<p><a href="http://www.amazon.com/Methods-Hyperbolic-Problems-Cambridge-Mathematics/dp/0521009243">LeVeque, Methods for Hyperbolic Problems</a></p>
 
-<h3 id="code-format">Code Format</h3>
+<p><a href="http://www.amazon.com/Difference-Schemes-Partial-Differential-Equations/dp/089871639X">Strikwerda, Finite Difference Schemes and Partial Differential Equations</a></p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-    <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-  <span class="k">end</span>
-  <span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-  <span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span>
-  </code></pre></figure>
+<p><a href="http://www.amazon.com/Methods-Implicit-Surfaces-Mathematical-Sciences/dp/0387954821">Osher, Level Set Methods and Dynamic Implicit Surfaces</a></p>
 
-<h3 id="tricks">Tricks</h3>
+<p><a href="http://www.amazon.com/Richard-Haberman-Mathematical-Mathematics-Mechanical/dp/B008UBLIZC">Haberman, Mathematical Models: Mechanical Vibrations, Population Dynamics and Traffic Flow</a></p>
 
-<ul>
-  <li><strong>Create post using terminal:</strong></li>
-</ul>
-
-<p>I tried to create a post using terminal, so I use <strong>rake</strong>. I create a file called reakefile.rb and wrtie the script based on <a href="http://quyennguyen.com/code/rake_for_jekyll/">Quyen’s</a> suggestion:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="c1"># Asking for title</span>
-  <span class="k">def</span> <span class="nf">ask</span> <span class="n">message</span>
-  <span class="nb">print</span> <span class="n">message</span>
-  <span class="no">STDIN</span><span class="p">.</span><span class="nf">gets</span><span class="p">.</span><span class="nf">chomp</span>
-  <span class="k">end</span>
-  <span class="n">title</span> <span class="o">=</span> <span class="n">ask</span><span class="p">(</span><span class="s1">'Title: '</span><span class="p">)</span>
-
-  <span class="c1">#Create new a post</span>
-  <span class="n">desc</span> <span class="s2">"Default 'rake' command creates a new post"</span>
-  <span class="n">task</span> <span class="ss">:default</span> <span class="k">do</span>
-    <span class="n">filename</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="no">Time</span><span class="p">.</span><span class="nf">now</span><span class="p">.</span><span class="nf">strftime</span><span class="p">(</span><span class="s1">'%Y-%m-%d'</span><span class="p">)</span><span class="si">}</span><span class="s2">-</span><span class="si">#{</span><span class="n">title</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/\s/</span><span class="p">,</span> <span class="s1">'_'</span><span class="p">).</span><span class="nf">downcase</span><span class="si">}</span><span class="s2">.markdown"</span>
-    <span class="n">path</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s2">"_posts"</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
-    <span class="k">if</span> <span class="no">File</span><span class="p">.</span><span class="nf">exist?</span> <span class="n">path</span><span class="p">;</span> <span class="k">raise</span> <span class="no">RuntimeError</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"File exists </span><span class="si">#{</span><span class="n">path</span><span class="si">}</span><span class="s2">"</span><span class="p">);</span> <span class="k">end</span>
-    <span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">file</span><span class="o">|</span>
-      <span class="n">file</span><span class="p">.</span><span class="nf">write</span> <span class="o">&lt;&lt;-</span><span class="no">EOS</span><span class="sh">
-
-  ---
-  layout: post
-  title: </span><span class="si">#{</span><span class="n">title</span><span class="si">}</span><span class="sh">
-  date: </span><span class="si">#{</span><span class="no">Time</span><span class="p">.</span><span class="nf">now</span><span class="p">.</span><span class="nf">strftime</span><span class="p">(</span><span class="s1">'%Y-%m-%d %k:%M:%S'</span><span class="p">)</span><span class="si">}</span><span class="sh">
-  ---
-</span><span class="no">  EOS</span>
-  <span class="k">end</span>
-
-  <span class="k">end</span>
-  </code></pre></figure>
+<p><a href="http://www.amazon.com/Physically-Based-Rendering-Second-Implementation/dp/0123750792">Pharr, Physically Based Rendering</a></p>
 
 
   </div>
