@@ -4,11 +4,12 @@ print message
 STDIN.gets.chomp
 end
 title = ask('Title: ')
+categories = ask('Categories: ')
 
 #Create new a post
 desc "Default 'rake' command creates a new post"
 task :default do
-  filename = "#{Time.now.strftime('%Y-%m-%d')}-#{title.gsub(/\s/, '_').downcase}.markdown"
+  filename = "#{Time.now.strftime('%Y-%m-%d')}-#{title.gsub(/\s/, '_').downcase}.md"
   path = File.join("_posts", filename)
   if File.exist? path; raise RuntimeError.new("File exists #{path}"); end
   File.open(path, 'w') do |file|
@@ -18,6 +19,7 @@ task :default do
 layout: post
 title: #{title}
 date: #{Time.now.strftime('%Y-%m-%d %k:%M:%S')}
+categories: #{categories}
 ---
 EOS
 end
