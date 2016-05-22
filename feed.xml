@@ -6,9 +6,525 @@
 </description>
     <link>http://heyl0822.github.io//_site/</link>
     <atom:link href="http://heyl0822.github.io//_site/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 19 May 2016 21:06:31 -0700</pubDate>
-    <lastBuildDate>Thu, 19 May 2016 21:06:31 -0700</lastBuildDate>
+    <pubDate>Sat, 21 May 2016 23:53:31 -0700</pubDate>
+    <lastBuildDate>Sat, 21 May 2016 23:53:31 -0700</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>Learn C++ Ch1 C++ Basics</title>
+        <description>&lt;h2 id=&quot;structure-of-a-program&quot;&gt;Structure of a program&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Statement:&lt;/strong&gt; instruction of a program.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Declaration statement:&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;int x;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Assignment statement:&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;x = 5;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Output statement:&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;std::cout &amp;lt;&amp;lt; x;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Expression:&lt;/strong&gt; a mathematical entity that evaluates to a value.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Function:&lt;/strong&gt; a collection of statements that executes sequentially.&lt;/p&gt;
+
+&lt;p&gt;hint: It’s a good idea to have your main() function live in a .cpp file with the same name as your project.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Library:&lt;/strong&gt; a collection of precompiled code (e.g. functions) that has been “packaged up” for reuse in many different programs.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Syntax:&lt;/strong&gt; rules that govern how sentences are constructed in a language&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Syntax error:&lt;/strong&gt; If you violate a rule, the compiler will complain&lt;/p&gt;
+
+&lt;h2 id=&quot;comments&quot;&gt;Comments&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; a line (or multiple lines) of text that are inserted into the source code to explain what the code is doing.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;//:&lt;/strong&gt; single-line comment, which tells the compiler to ignore everything to the end of the line.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;/* */&lt;/strong&gt; multi-line comment. Everything in between the symbols is ignored. Do not nest.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;sr&quot;&gt;/* This is a multi-line comment.
+     * the matching asterisks to the left
+     * can make this easier to read
+     */&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;At the library, program, or function level, describe what&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Inside the library, program, or function, describe how&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;At the statement level, describe why.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;variables-initialization-and-assignment&quot;&gt;Variables, initialization, and assignment&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Variable:&lt;/strong&gt; a name for a piece of memory that can be used to store information.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;l-value:&lt;/strong&gt; a value that has an address (in memory).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;r-value:&lt;/strong&gt; refers to any value that can be assigned to an l-value.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;initialization:&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;int x = 5;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;assignment:&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;int x; x = 5;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;uninitialized variable:&lt;/strong&gt; A variable that has not been assigned a value&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Rule&lt;/em&gt;: Initialize your variables.&lt;/p&gt;
+
+&lt;h2 id=&quot;cout-cin-endl-the-std-namespace-and-using-statements&quot;&gt;cout, cin, endl, the std namespace, and using statements&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;std::cout&lt;/strong&gt; output text to the console&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;std::endl&lt;/strong&gt; inserts a newline character&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;std::cin&lt;/strong&gt; reads input from the user at the console using the input operator (»).&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;std::cin and cout always go on the left-hand side of the statement.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;std::cout is used to output a value (cout = output)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;std::cin is used to get an input value (cin = input)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;« is used with std::cout, and shows the direction that data is moving from the r-value to the console.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&amp;gt;&amp;gt; is used with std::cin, and shows the direction that data is moving from the console into the variable.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;using declaration&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;c1&quot;&gt;#include &amp;lt;iostream&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;declaration&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tells&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;compiler&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;that&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;should&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resolve&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello world!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;so&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;no&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prefix&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;needed&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;here!&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;using directive&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;c1&quot;&gt;#include &amp;lt;iostream&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;directive&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tells&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;compiler&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;that&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;we&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&#39;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;re&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;everything&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;namespace!&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello world!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;so&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;no&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prefix&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;needed&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;here!&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;em&gt;Rule&lt;/em&gt;: Avoid “using” statement outside of a function body.&lt;/p&gt;
+
+&lt;h2 id=&quot;functions-and-return-values&quot;&gt;Functions and return values&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;function:&lt;/strong&gt; a reusable sequence of statements designed to do a particular job.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;caller:&lt;/strong&gt; The function initiating the function call&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;callee or called:&lt;/strong&gt; the function being called&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;void:&lt;/strong&gt; means the function does not return a value&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;status code:&lt;/strong&gt; return a value back to the operating system. a return value of 0 means success, and a positive return value means failure.&lt;/p&gt;
+
+&lt;p&gt;Functions can not be defined inside other functions (called nesting) in C++.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;function parameter:&lt;/strong&gt; a variable used in a function where the value is provided by the caller of the function.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;argument:&lt;/strong&gt; a value that is passed from the caller to the function when a function call is made.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;pass by value&lt;/strong&gt; value of each of the arguments is copied into the matching parameter.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Benefits of functions&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Organization&lt;/li&gt;
+  &lt;li&gt;Reusability, avoid duplicate&lt;/li&gt;
+  &lt;li&gt;Testing&lt;/li&gt;
+  &lt;li&gt;Extensibility&lt;/li&gt;
+  &lt;li&gt;Abstraction&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Effectively using functions&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Code that appears more than once in a program should generally be made into a function. For example, if we’re reading input from the user multiple times in the same way, that’s a great candidate for a function. If we output something in the same way multiple times, that’s also a great candidate for a function.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Code that has a discrete set of inputs and outputs is a good candidate for a function, particularly if it is complicated. For example, if we have a list of items that we want to sort, the code to do the sorting would make a great function, even if it’s only done once. The input is the unsorted list, and the output is the sorted list.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;A function should generally perform one (and only one) task.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;When a function becomes too long, too complicated, or hard to understand, it should be split into multiple sub-functions. This is called refactoring.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Keywords&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;alignas&lt;/td&gt;
+      &lt;td&gt;class&lt;/td&gt;
+      &lt;td&gt;else&lt;/td&gt;
+      &lt;td&gt;inline&lt;/td&gt;
+      &lt;td&gt;public&lt;/td&gt;
+      &lt;td&gt;switch&lt;/td&gt;
+      &lt;td&gt;unsigned&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;alignof&lt;/td&gt;
+      &lt;td&gt;const&lt;/td&gt;
+      &lt;td&gt;enum&lt;/td&gt;
+      &lt;td&gt;int&lt;/td&gt;
+      &lt;td&gt;register&lt;/td&gt;
+      &lt;td&gt;template&lt;/td&gt;
+      &lt;td&gt;using&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;asm&lt;/td&gt;
+      &lt;td&gt;constexpr&lt;/td&gt;
+      &lt;td&gt;explicit&lt;/td&gt;
+      &lt;td&gt;long&lt;/td&gt;
+      &lt;td&gt;reinterpret_cast&lt;/td&gt;
+      &lt;td&gt;this&lt;/td&gt;
+      &lt;td&gt;virtual&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;auto&lt;/td&gt;
+      &lt;td&gt;const_cast&lt;/td&gt;
+      &lt;td&gt;export&lt;/td&gt;
+      &lt;td&gt;mutable&lt;/td&gt;
+      &lt;td&gt;return&lt;/td&gt;
+      &lt;td&gt;thread_local&lt;/td&gt;
+      &lt;td&gt;void&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;bool&lt;/td&gt;
+      &lt;td&gt;continue&lt;/td&gt;
+      &lt;td&gt;extern&lt;/td&gt;
+      &lt;td&gt;namespace&lt;/td&gt;
+      &lt;td&gt;short&lt;/td&gt;
+      &lt;td&gt;throw&lt;/td&gt;
+      &lt;td&gt;volatile&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;break&lt;/td&gt;
+      &lt;td&gt;decltype&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;new&lt;/td&gt;
+      &lt;td&gt;signed&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt;wchar_t&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;case&lt;/td&gt;
+      &lt;td&gt;default&lt;/td&gt;
+      &lt;td&gt;float&lt;/td&gt;
+      &lt;td&gt;noexcept&lt;/td&gt;
+      &lt;td&gt;sizeof&lt;/td&gt;
+      &lt;td&gt;try&lt;/td&gt;
+      &lt;td&gt;while&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;catch&lt;/td&gt;
+      &lt;td&gt;delete&lt;/td&gt;
+      &lt;td&gt;for&lt;/td&gt;
+      &lt;td&gt;nullptr&lt;/td&gt;
+      &lt;td&gt;static&lt;/td&gt;
+      &lt;td&gt;typedef&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;char&lt;/td&gt;
+      &lt;td&gt;do&lt;/td&gt;
+      &lt;td&gt;friend&lt;/td&gt;
+      &lt;td&gt;operator&lt;/td&gt;
+      &lt;td&gt;static_assert&lt;/td&gt;
+      &lt;td&gt;typeid&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;char16_t&lt;/td&gt;
+      &lt;td&gt;double&lt;/td&gt;
+      &lt;td&gt;goto&lt;/td&gt;
+      &lt;td&gt;private&lt;/td&gt;
+      &lt;td&gt;static_cast&lt;/td&gt;
+      &lt;td&gt;typename&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;char32_t&lt;/td&gt;
+      &lt;td&gt;dynamic_cast&lt;/td&gt;
+      &lt;td&gt;if&lt;/td&gt;
+      &lt;td&gt;protected&lt;/td&gt;
+      &lt;td&gt;struct&lt;/td&gt;
+      &lt;td&gt;union&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;Identifiers&lt;/strong&gt; The name of a variable, function, class, or other object in C++&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;            &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;correct&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;my_variable_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;correct&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;separated&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;underscores&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myVariableName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;   &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;correct&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;intercapped&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;camelCase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;holds&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chars&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;piece&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;including&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;whitespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;punctuation!&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numberOfChars&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;operators&quot;&gt;Operators&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;literal&lt;/strong&gt; a fixed value that has been inserted (hardcoded) directly into the source code.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Operands&lt;/strong&gt; supply the data that the expression works with. Literals, variables, and functions are all known as operands.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Operators&lt;/strong&gt; tell the expression how to combine one or more operands to produce a new result.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Unary&lt;/strong&gt; operators act on one operand. &lt;code class=&quot;highlighter-rouge&quot;&gt;-5&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Binary&lt;/strong&gt; operators act on two operands (known as left and right). &lt;code class=&quot;highlighter-rouge&quot;&gt;3 + 4&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Ternary&lt;/strong&gt; operators act on three operands. &lt;code class=&quot;highlighter-rouge&quot;&gt;(expression 1) ? expression 2 : expression 3&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;whitespace-and-basic-formatting&quot;&gt;Whitespace and basic formatting&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Your tabs should be set to 4 spaces&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The braces that tell where a function begins and ends should be aligned with the function name, and be on their own lines&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Each statement within braces should start one tab in from the opening brace of the function it belongs to.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Lines should not be too long. Typically, 72, 78, or 80 characters is the maximum length a line should be.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If a long line that is broken into pieces is broken with an operator (eg. « or +), the operator should be placed at the end of the line, not the start of the next line.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;This is a really, really, really, really, really, really, really, &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;really long line&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;one&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;extra&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;indentation&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;continuation&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;This is another really, really, really, really, really, really, really, &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;
+            &lt;span class=&quot;s2&quot;&gt;&quot;really long line&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aligned&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;previous&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;continuation&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;This one is short&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Use whitespace to make your code easier to read.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;nCost&lt;/span&gt;          &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;57&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;nPricePerItem&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;24&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;nValue&lt;/span&gt;         &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;nNumberOfItems&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;17&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello world!&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;                  &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;live&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;iostream&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;library&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;It is very nice to meet you!&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;these&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;comments&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;are&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;easier&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Yeah!&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;                         &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;especially&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;when&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;all&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lined&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;up&lt;/span&gt;
+
+&lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;live&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;iostream&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;library&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello world!&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;these&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;comments&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;are&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;easier&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;It is very nice to meet you!&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;when&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;separated&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;whitespace&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Yeah!&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;forward-declarations-and-definitions&quot;&gt;Forward declarations and definitions&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Rule&lt;/em&gt;: When addressing compile errors in your programs, always resolve the first error produced first.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;forward declaration&lt;/strong&gt; allows us to tell the compiler about the existence of an identifier before actually defining the identifier.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;function prototype&lt;/strong&gt; consists of the function’s return type, name, parameters, but no function body&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;definition&lt;/strong&gt; implements or instantiates (causes memory to be allocated for) the identifier.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;declaration&lt;/strong&gt; a statement that defines an identifier (variable or function name) and its type.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;pure declarations&lt;/strong&gt; a small subset of declarations that are not definitions, such as function prototypes&lt;/p&gt;
+
+&lt;h2 id=&quot;header-files&quot;&gt;Header files&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;header guard&lt;/strong&gt; prevent a given header file from being #included more than once from the same file.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.learncpp.com/images/CppTutorial/Section1/IncludeHeader.png&quot; alt=&quot;Valid XHTML&quot; /&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&amp;lt; &amp;gt;&lt;/strong&gt; angled brackets are used to tell the compiler that we are including a header file that was included with the compiler, so it should look for that header file in the system directories.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;” “&lt;/strong&gt; The double-quotes tell the compiler that this is a header file we are supplying, so it should look for that header file in the current directory containing our source code first. If it doesn’t find the header file there, it will check any other include paths that you’ve specified as part of your compiler/IDE settings. That failing, it will fall back to checking the system directories.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Rule&lt;/em&gt;: Use angled brackets to include header files that come with the compiler. Use double quotes to include any other header files.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Rule&lt;/em&gt;: use the non .h version of a library if it exists, and access the functionality through the std namespace. If the non .h version does not exist, or you are creating your own headers, use the .h version. tell your compiler or IDE that you have a bunch of header files in some other location, so that it will look there when it can’t find them in the current directory. This can generally be done by setting an “include path” or “search directory” in your IDE project settings.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;g++ -o main -I /source/includes main.cpp&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Always include header guards.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Do not define variables in header files unless they are constants. Header files should generally only be used for declarations.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Do not define functions in header files.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Each header file should have a specific job, and be as independent as possible.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Give your header files the same name as the source files they’re associated with (e.g. grades.h goes with grades.cpp).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Try to minimize the number of other header files you #include in your header files. Only #include what is necessary.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Do not #include .cpp files.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;preprocessor&quot;&gt;preprocessor&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Preprocessor&lt;/strong&gt; a separate program that runs just before the compiler when you compile your program. Its purpose is to process directives. Directives are specific instructions that start with a # symbol and end with a newline&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Includes&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;#include &amp;lt;filename&amp;gt;&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;#include &quot;filename&quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Macro defines&lt;/strong&gt; a rule that defines how an input sequence.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Object-like macro:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#define identifier&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#define identifier substitution_text&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Function-like macros act like functions, and serve a similar purpose. We will not discuss them, because their use is generally considered dangerous, and almost anything they can do can be done by an (inline) function.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Conditional compilation&lt;/strong&gt; #ifdef, #ifndef, and #endif.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;#pragma once&lt;/strong&gt; serves the same purpose as header guards, and has the added benefit of being shorter and less error-prone.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;design programs&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Step 1: Define the problem&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Step 2: Define your tools, targets, and backup plan&lt;/p&gt;
+
+    &lt;p&gt;Understanding who your target users are and what they want.&lt;/p&gt;
+
+    &lt;p&gt;Defining what target architecture and/or OS your program will run on.&lt;/p&gt;
+
+    &lt;p&gt;Determining what set of tools you will be using.&lt;/p&gt;
+
+    &lt;p&gt;Determining whether you will write your program alone or as part of a team.&lt;/p&gt;
+
+    &lt;p&gt;Collecting requirements (a documented list of what the program needs to do).&lt;/p&gt;
+
+    &lt;p&gt;Defining your testing/feedback/release strategy.&lt;/p&gt;
+
+    &lt;p&gt;Determining how you will back up your code.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Step 3: Break hard problems down into easy problems&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Step 4: Figure out the sequence of events&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Step 5: Figure out the data inputs and outputs for each task&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Step 6: Write the task details&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Step 7: Connect the data inputs and outputs&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Words of advice when writing programs&lt;/p&gt;
+
+    &lt;p&gt;Keep your programs simple to start.&lt;/p&gt;
+
+    &lt;p&gt;Add features over time.&lt;/p&gt;
+
+    &lt;p&gt;Focus on one area at a time.&lt;/p&gt;
+
+    &lt;p&gt;Test each piece of code as you go.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;debugging-program&quot;&gt;Debugging program&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;syntax error&lt;/strong&gt; occurs when you write a statement that is not valid according to the grammar of the C++ language.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;semantic error&lt;/strong&gt; occurs when a statement is syntactically valid, but does not do what the programmer intended.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;debugger&lt;/strong&gt; a computer program that allows the programmer to control how a program executes and watch what happens as it runs.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Stepping&lt;/strong&gt; a debugger feature that lets you execute (step through) your code line by line.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Step into&lt;/strong&gt; executes the next line of code.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Step over&lt;/strong&gt; executes the next line of code.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Step out&lt;/strong&gt; executes all remaining code in the function you are currently in, and returns control to you when the function has finished executing.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Run to cursor&lt;/strong&gt; executes the program like normal until it gets to the line of code selected by your cursor.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Run&lt;/strong&gt; tell the debugger to run until it hits the end of the program&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;breakpoint&lt;/strong&gt; a special marker that tells the debugger to stop execution of the program at the breakpoint when running in debug mode.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Watching variables&lt;/strong&gt; the process of inspecting the value of a variable while the program is executing in debug mode.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;call stack&lt;/strong&gt; a list of all the active functions that have been called to get to the current point of execution.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 21 May 2016 15:32:52 -0700</pubDate>
+        <link>http://heyl0822.github.io//_site/c++/2016/05/21/learn_c++_ch1_c++_basics.html</link>
+        <guid isPermaLink="true">http://heyl0822.github.io//_site/c++/2016/05/21/learn_c++_ch1_c++_basics.html</guid>
+        
+        
+        <category>c++</category>
+        
+      </item>
     
       <item>
         <title>Learn C++ Ch0 Introduction</title>
