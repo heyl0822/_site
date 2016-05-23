@@ -7,11 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico?">
-  <title>Learn C++ Ch0 Introduction</title>
-  <meta name="description" content="A program (or application / software) is a set of instructions that tells the computer what to do.">
+  <title>Learn C++ Ch2 Variables and Fundamental Data Types</title>
+  <meta name="description" content="Fundamental variable definition, initialization, and assignment">
 
   <link rel="stylesheet" href="/_site/css/main.css">
-  <link rel="canonical" href="http://heyl0822.github.io//_site/c++/2016/05/19/learn_c++_ch0_introduction.html">
+  <link rel="canonical" href="http://heyl0822.github.io//_site/c++/2016/05/22/learn_c++_ch2_variables_and_fundamental_data_types.html">
   <link rel="alternate" type="application/rss+xml" title="Yanling's Blog" href="http://heyl0822.github.io//_site/feed.xml">
 </head>
 
@@ -177,8 +177,8 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Learn C++ Ch0 Introduction</h1>
-    <p class="post-meta"><time datetime="2016-05-19T13:47:41-07:00" itemprop="datePublished">May 19, 2016</time></p>
+    <h1 class="post-title" itemprop="name headline">Learn C++ Ch2 Variables and Fundamental Data Types</h1>
+    <p class="post-meta"><time datetime="2016-05-22T16:50:11-07:00" itemprop="datePublished">May 22, 2016</time></p>
   </header>
 
   <script type="text/javascript"
@@ -186,71 +186,204 @@
   </script>
 
   <div class="post-content" itemprop="articleBody">
-    <p>A <strong>program</strong> (or <strong>application</strong> / <strong>software</strong>) is a set of instructions that tells the computer what to do.</p>
+    <h2 id="fundamental-variable-definition-initialization-and-assignment">Fundamental variable definition, initialization, and assignment</h2>
 
-<p>High-level language cod -&gt; Compiler -&gt; Executable
-Executable -&gt; CPU -&gt; Program results</p>
+<p><strong>Addresses:</strong> Memory is organized into sequential units</p>
 
-<p>Some scripting language use <strong>Interpreter</strong>. more flexible, less efficient.</p>
+<p><strong>Byte:</strong> The smallest addressable unit of memory is a group of 8 bits</p>
 
-<p>High-level language code -&gt; interpreter -&gt; CPU -&gt; Program Results</p>
+<p><strong>Fundamental data types:</strong> basic types, primitive types, or built-in types.</p>
 
-<p><strong>C++</strong> object oriented language</p>
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Types</th>
+      <th>Meaning</th>
+      <th>Example</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>boolean</td>
+      <td>bool</td>
+      <td>true or false</td>
+      <td>true</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>character</td>
+      <td>char, wchar_t, char16_t, char32_t</td>
+      <td>a single ASCII character</td>
+      <td>‘c’</td>
+      <td>char16_t, char32_t are C++11 only</td>
+    </tr>
+    <tr>
+      <td>floating point</td>
+      <td>float, double, long double</td>
+      <td>a number with a decimal</td>
+      <td>3.14159</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>integer</td>
+      <td>short, int, long, long long</td>
+      <td>a whole number</td>
+      <td>64</td>
+      <td>long long is C99/C++11 only</td>
+    </tr>
+    <tr>
+      <td>void</td>
+      <td>no type</td>
+      <td>void	n/a</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
 
-<p><strong>software development</strong></p>
+<p><strong>Defining a variable:</strong> <code class="highlighter-rouge">Type varName;</code></p>
 
-<p>Step 1: Define the problem to be solved.</p>
+<p><strong>Variable initialization</strong></p>
 
-<p>Step 2: Design a solution.</p>
+<ul>
+  <li>copy initialization: <code class="highlighter-rouge">int nValue = 5;</code></li>
+  <li>direct initialization: <code class="highlighter-rouge">int nValue(5);</code></li>
+  <li>Uniform initialization: <code class="highlighter-rouge">int value{5}; int value{}; // default initialization to 0</code></li>
+</ul>
 
-<p>A good solution: straightforward, well documented, built modularly, can be reused or change later, robust, can recover or give useful error message.</p>
+<p>Rule: Favor direct initialization over copy initialization</p>
 
-<p>Step 3: Write a program that implements the solution.</p>
+<p>Rule: If you’re using a C++11 compatible compiler, favor uniform initialization</p>
 
-<p>Editor: line number, syntax highlighting and coloring, an unambiguous font.</p>
+<p><strong>Variable assignment</strong></p>
 
-<p>Step 4: Compile the program.</p>
+<ul>
+  <li>copy assignment: <code class="highlighter-rouge">int nValue; nValue = 5;</code></li>
+</ul>
 
-<p>Compiler: check program and make sure it follows the rule, convert source code into a machine language called object file, name.o or name.obj</p>
+<p>Rule: Avoid defining multiple variables on a single line if initializing any of them.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>g++ -c file1.cpp file2.cpp file3.cpp
-</code></pre>
-</div>
+<p>Rule: Define variables as close to their first use as possible.</p>
 
-<p>Step 5: Link object files.</p>
+<h2 id="void">Void</h2>
 
-<p>Linker: takes all object files into a single executable program linker, includes files from C++ standard library.</p>
+<ul>
+  <li>
+    <p>As a way to indicate that a function does not return a value</p>
+  </li>
+  <li>
+    <p>As a way to indicate that a function does not take any parameters</p>
+  </li>
+</ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>g++ -o prog file1.o file2.o file3.o
-</code></pre>
-</div>
+<h2 id="variable-sizes-and-the-sizeof-operator">Variable sizes and the sizeof operator</h2>
 
-<p>Combine compile and link:</p>
+<p>n bits can hold \( 2^n \)</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>g+ -o prog file1.cpp file2.cpp file3.cpp
-</code></pre>
-</div>
+<p><strong>The size of C++ basic data types</strong></p>
 
-<p>Step 6: Test and debug program.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Type</th>
+      <th>Minimum Size</th>
+      <th>Note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>boolean</td>
+      <td>bool</td>
+      <td>1 byte</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>character</td>
+      <td>char</td>
+      <td>1 byte</td>
+      <td>May be signed or unsigned</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>wchar_t</td>
+      <td>1 byte</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>char16_t</td>
+      <td>2 bytes</td>
+      <td>C++11 type</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>char32_t</td>
+      <td>4 bytes</td>
+      <td>C++11 type</td>
+    </tr>
+    <tr>
+      <td>integer</td>
+      <td>short</td>
+      <td>2 bytes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>int</td>
+      <td>2 bytes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>long</td>
+      <td>4 bytes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>long long</td>
+      <td>8 bytes</td>
+      <td>C99/C++11 type</td>
+    </tr>
+    <tr>
+      <td>floating point</td>
+      <td>float</td>
+      <td>4 bytes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>double</td>
+      <td>8 bytes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>long double</td>
+      <td>8 bytes</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
 
-<p><strong>Integrated development environment (IDE)</strong></p>
+<p>the actual size of the variables may be different on your machine.</p>
 
-<p>windows: VisualStudio, Code::Blocks</p>
+<p><strong>sizeof operator</strong> a unary operator that takes either a type or a variable, and returns its size in bytes. The sizeof operator is one of only three operators in C++ that are a word instead of a symbol. The other two are new and delete.</p>
 
-<p>Mac: Xcode</p>
+<h2 id="integers">Integers</h2>
 
-<p>Web: CodeChef</p>
+<p><strong>integer</strong> a variable that can only hold non-fractional numbers</p>
 
-<p><strong>workplace:</strong> a container that can hold one or more related projects. REcommand a new workplace for each program.</p>
+<p><strong>signed</strong> a variable that can hold both negative and positive numbers.</p>
 
-<p>Create a C++ project in Xcode: File -&gt; New -&gt; Project, under OSX -&gt; Application -&gt; Command Line Tool -&gt; C++</p>
+<p><strong>unsigned</strong> can only hold positive values.</p>
 
-<p><strong>Build Configurations:</strong> a collection of project settings that determines how your IDE will build your project. A release configuration, a debug configuration.</p>
+<p>n-bit signed variable has a range of \( -( 2^{n-1} ) \) to \( 2^{n-1}-1 \).</p>
 
-<p>Change congifuration in Xcode: Product -&gt; Scheme -&gt; Edit Echeme: Build Configuration</p>
-
-<p>Shortcut: Alt + “Run”</p>
-
+<p>An n-bit unsigned variable has a range of 0 to \( (2^n)-1 \).</p>
 
   </div>
 
