@@ -385,6 +385,573 @@
 
 <p>An n-bit unsigned variable has a range of 0 to \( (2^n)-1 \).</p>
 
+<table>
+  <thead>
+    <tr>
+      <th>Size/Type</th>
+      <th>Range</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1 byte signed</td>
+      <td>-128 to 127</td>
+    </tr>
+    <tr>
+      <td>1 byte unsigned</td>
+      <td>0 to 255</td>
+    </tr>
+    <tr>
+      <td>2 byte signed</td>
+      <td>-32,768 to 32,767</td>
+    </tr>
+    <tr>
+      <td>2 byte unsigned</td>
+      <td>0 to 65,535</td>
+    </tr>
+    <tr>
+      <td>4 byte signed</td>
+      <td>-2,147,483,648 to 2,147,483,647</td>
+    </tr>
+    <tr>
+      <td>4 byte unsigned</td>
+      <td>0 to 4,294,967,295</td>
+    </tr>
+    <tr>
+      <td>8 byte signed</td>
+      <td>-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807</td>
+    </tr>
+    <tr>
+      <td>8 byte unsigned</td>
+      <td>0 to 18,446,744,073,709,551,615</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Type</th>
+      <th>Default Sign</th>
+      <th>Note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>character</td>
+      <td>char</td>
+      <td>Signed or Unsigned</td>
+      <td>Usually signed</td>
+    </tr>
+    <tr>
+      <td>integer</td>
+      <td>short</td>
+      <td>Signed</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>int</td>
+      <td>Signed</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>long</td>
+      <td>Signed</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>long long</td>
+      <td>Signed</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Overflow</strong> when bits are lost because a variable has not been allocated enough memory to store them.</p>
+
+<p>Rule: Favor signed integers over unsigned integers</p>
+
+<p>Rule: Do not depend on the results of overflow in your program.</p>
+
+<p>Rule: Be careful when using integer division, as you will lose any fractional parts of the result</p>
+
+<p><strong>Fixed-width integers</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Range</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>int8_t</td>
+      <td>1 byte signed</td>
+      <td>-128 to 127</td>
+    </tr>
+    <tr>
+      <td>uint8_t</td>
+      <td>1 byte unsigned</td>
+      <td>0 to 255</td>
+    </tr>
+    <tr>
+      <td>int16_t</td>
+      <td>2 byte signed</td>
+      <td>-32,768 to 32,767</td>
+    </tr>
+    <tr>
+      <td>uint16_t</td>
+      <td>2 byte unsigned</td>
+      <td>0 to 65,535</td>
+    </tr>
+    <tr>
+      <td>int32_t</td>
+      <td>4 byte signed</td>
+      <td>-2,147,483,648 to 2,147,483,647</td>
+    </tr>
+    <tr>
+      <td>uint32_t</td>
+      <td>4 byte unsigned</td>
+      <td>0 to 4,294,967,295</td>
+    </tr>
+    <tr>
+      <td>int64_t</td>
+      <td>8 byte signed</td>
+      <td>-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807</td>
+    </tr>
+    <tr>
+      <td>uint64_t</td>
+      <td>8 byte unsigned</td>
+      <td>0 to 18,446,744,073,709,551,615</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Warning: int8_t and uint8_t may or may not behave like chars</p>
+
+<ul>
+  <li>int can be used when the integer size doesn’t matter and isn’t going to be large.</li>
+  <li>Fixed-width integers should be used in all other cases, especially when you need an integer with a guaranteed width.</li>
+  <li>Only use unsigned types if you have a compelling reason.</li>
+</ul>
+
+<h2 id="floating-point-numbers">Floating point numbers</h2>
+
+<p><strong>floating point type variable</strong> is a variable that can hold a real number. float, double, and long double.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Type</th>
+      <th>Minimum Size</th>
+      <th>Typical Size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>floating point</td>
+      <td>float</td>
+      <td>4 bytes</td>
+      <td>4 bytes</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>double</td>
+      <td>4 bytes</td>
+      <td>8 bytes</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>long double</td>
+      <td>4 bytes</td>
+      <td>8, 12, or 16 bytes</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>int n(5); // 5 means integer
+double d(5.0); // 5.0 means floating point (double by default)
+float f(5.0f); // 5.0 means floating point, f suffix means float
+</code></pre>
+</div>
+
+<p><strong>Scientific notation</strong> is a useful shorthand for writing lengthy numbers in a concise manner.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>double d1(5000.0);
+double d2(5e3); // another way to assign 5000
+
+double d3(0.05);
+double d4(5e-2); // another way to assign 0.05
+</code></pre>
+</div>
+
+<p><strong>convert numbers to scientific notation</strong></p>
+
+<ul>
+  <li>Your exponent starts at zero.</li>
+  <li>Slide the decimal so there is only one non-zero digit to the left of the decimal.</li>
+  <li>Each place you slide the decimal to the left increases the exponent by 1.</li>
+  <li>Each place you slide the decimal to the right decreases the exponent by 1.</li>
+  <li>Trim off any leading zeros (on the left end)</li>
+  <li>Trim off any trailing zeros (on the right end) if the original number had no decimal point. We’re assuming they’re not significant unless otherwise specified.</li>
+</ul>
+
+<p>The digits in the significand (the part before the E) are called the <strong>significant digits</strong>. The number of significant digits defines a number’s <strong>precision</strong>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Start with: 600.410
+Slide decimal left 2 spaces: 6.00410e2
+No leading zeros to trim: 6.00410e2
+Don't trim trailing zeros: 6.00410e2 (6 significant digits)
+</code></pre>
+</div>
+
+<p>cout has a default precision of 6</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>std::cout &lt;&lt; std::setprecision(16); // show 16 digits
+</code></pre>
+</div>
+
+<p>Float values have between 6 and 9 digits of precision, with most float values having at least 7 significant digits. Double values have between 15 and 18 digits of precision. Long double has a minimum precision of 15, 18, or 33 significant digits depending on how many bytes it occupies.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Size</th>
+      <th>Range</th>
+      <th>Precision</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>4 bytes</td>
+      <td>±1.18 x 10-38 to ±3.4 x 1038</td>
+      <td>6-9 significant digits, typically 7</td>
+    </tr>
+    <tr>
+      <td>8 bytes</td>
+      <td>±2.23 x 10-308 to ±1.80 x 10308</td>
+      <td>15-18 significant digits, typically 16</td>
+    </tr>
+    <tr>
+      <td>80-bits (12 bytes)</td>
+      <td>±3.36 x 10-4932 to ±1.18 x 104932</td>
+      <td>18-21 significant digits</td>
+    </tr>
+    <tr>
+      <td>16 bytes</td>
+      <td>±3.36 x 10-4932 to ±1.18 x 104932</td>
+      <td>33-36 significant digits</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Rule: Favor double over float unless space is at a premium, as the lack of precision in a float will often lead to inaccuracies.</p>
+
+<p><strong>Inf</strong> which represents infinity. Inf can be positive or negative. <strong>NaN</strong> which stands for “Not a Number”.</p>
+
+<ul>
+  <li>
+    <p>Floating point numbers are great for storing very large or very small numbers, including those with fractional components, so long as they have a limited number of significant digits (precision).</p>
+  </li>
+  <li>
+    <p>Floating point numbers often have small rounding errors, even when the number has fewer significant digits than the precision. Many times these go unnoticed because they are so small, and because the numbers are truncated for output. Consequently, comparisons of floating point numbers may not give the expected results. Performing mathematical operations on these values will cause the rounding errors to grow larger.</p>
+  </li>
+</ul>
+
+<h2 id="boolean-values">Boolean values</h2>
+
+<p>To declare a boolean variable, we use the keyword <strong>bool</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>bool b;
+bool b1 = true; // copy initialization
+bool b2(false); // direct initialization
+bool b3 { true }; // uniform initialization (C++11)
+
+std::cout &lt;&lt; std::boolalpha; // print bools as true or false
+</code></pre>
+</div>
+
+<p>Boolean values are also useful as the return values for functions that check whether something is true or not. Such functions are typically named starting with the word <strong>is</strong> (e.g. isEqual) or <strong>has</strong> (e.g. hasCommonFactor).</p>
+
+<h2 id="chars">Chars</h2>
+
+<p>A <strong>type cast</strong> creates a value of one type from a value of another type. To convert between fundamental data types (for example, from a char to an int, or vice versa), we use a type cast called a <strong>static cast</strong>. static casting doesn’t do any range checking</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>static_cast&lt;new_type&gt;(expression)
+</code></pre>
+</div>
+
+<ul>
+  <li>
+    <p><strong>static_cast</strong> is the first cast you should attempt to use. It does things like implicit conversions between types (such as int to float, or pointer to void*), and it can also call explicit conversion functions (or implicit ones). In many cases, explicitly stating static_cast isn’t necessary, but it’s important to note that the T(something) syntax is equivalent to (T)something and should be avoided (more on that later). A T(something, something_else) is safe, however, and guaranteed to call the constructor.</p>
+
+    <p>static_cast can also cast through inheritance hierarchies. It is unnecessary when casting upwards (towards a base class), but when casting downwards it can be used as long as it doesn’t cast through virtual inheritance. It does not do checking, however, and it is undefined behavior to static_cast down a hierarchy to a type that isn’t actually the type of the object.</p>
+  </li>
+  <li>
+    <p><strong>const_cast</strong> can be used to remove or add const to a variable; no other C++ cast is capable of removing it (not even reinterpret_cast). It is important to note that modifying a formerly const value is only undefined if the original variable is const; if you use it to take the const off a reference to something that wasn’t declared with const, it is safe. This can be useful when overloading member functions based on const, for instance. It can also be used to add const to an object, such as to call a member function overload.</p>
+
+    <p>const_cast also works similarly on volatile, though that’s less common.</p>
+  </li>
+  <li>
+    <p><strong>dynamic_cast</strong> is almost exclusively used for handling polymorphism. You can cast a pointer or reference to any polymorphic type to any other class type (a polymorphic type has at least one virtual function, declared or inherited). You can use it for more than just casting downwards – you can cast sideways or even up another chain. The dynamic_cast will seek out the desired object and return it if possible. If it can’t, it will return nullptr in the case of a pointer, or throw std::bad_cast in the case of a reference.</p>
+
+    <p>dynamic_cast has some limitations, though. It doesn’t work if there are multiple objects of the same type in the inheritance hierarchy (the so-called ‘dreaded diamond’) and you aren’t using virtual inheritance. It also can only go through public inheritance - it will always fail to travel through protected or private inheritance. This is rarely an issue, however, as such forms of inheritance are rare.</p>
+  </li>
+  <li>
+    <p><strong>reinterpret_cast</strong> is the most dangerous cast, and should be used very sparingly. It turns one type directly into another - such as casting the value from one pointer to another, or storing a pointer in an int, or all sorts of other nasty things. Largely, the only guarantee you get with reinterpret_cast is that normally if you cast the result back to the original type, you will get the exact same value (but not if the intermediate type is smaller than the original type). There are a number of conversions that reinterpret_cast cannot do, too. It’s used primarily for particularly weird conversions and bit manipulations, like turning a raw data stream into actual data, or storing data in the low bits of an aligned pointer.</p>
+  </li>
+</ul>
+
+<p><strong>Escape sequences</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Symbol</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Alert</td>
+      <td>\a</td>
+      <td>Makes an alert, such as a beep</td>
+    </tr>
+    <tr>
+      <td>Backspace</td>
+      <td>\b</td>
+      <td>Moves the cursor back one space</td>
+    </tr>
+    <tr>
+      <td>Formfeed</td>
+      <td>\f</td>
+      <td>Moves the cursor to next logical page</td>
+    </tr>
+    <tr>
+      <td>Newline</td>
+      <td>\n</td>
+      <td>Moves cursor to next line</td>
+    </tr>
+    <tr>
+      <td>Carriage return</td>
+      <td>\r</td>
+      <td>Moves cursor to beginning of line</td>
+    </tr>
+    <tr>
+      <td>Horizontal tab</td>
+      <td>\t</td>
+      <td>Prints a horizontal tab</td>
+    </tr>
+    <tr>
+      <td>Vertical tab</td>
+      <td>\v</td>
+      <td>Prints a vertical tab</td>
+    </tr>
+    <tr>
+      <td>Single quote</td>
+      <td>\’</td>
+      <td>Prints a single quote</td>
+    </tr>
+    <tr>
+      <td>Double quote</td>
+      <td>\”</td>
+      <td>Prints a double quote</td>
+    </tr>
+    <tr>
+      <td>Backslash</td>
+      <td>\</td>
+      <td>Prints a backslash</td>
+    </tr>
+    <tr>
+      <td>Question mark</td>
+      <td>\?</td>
+      <td>Prints a question mark</td>
+    </tr>
+    <tr>
+      <td>Octal number</td>
+      <td>(number)</td>
+      <td>Translates into char represented by octal</td>
+    </tr>
+    <tr>
+      <td>Hex number</td>
+      <td>\x(number)</td>
+      <td>Translates into char represented by hex number</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>When std::cout is used for output, the output may be buffered – that is, std::cout may not send the text to the output device immediately (for performance reasons). Both ‘\n’ and std::endl will move the cursor to the next line. In addition, std::endl will also ensure that any queued output is actually output before continuing.</p>
+
+<ul>
+  <li>Use std::endl when you need to ensure your output is output immediately (e.g. when writing a record to a file, or when updating a progress bar). Note that this may have a performance cost, particularly if writing to the output device is slow (e.g. when writing a file to a disk).</li>
+  <li>Use ‘\n’ in other cases.</li>
+</ul>
+
+<p><strong>wchar_t, char16_t, and char32_t</strong></p>
+
+<ul>
+  <li>
+    <p>wchar_t should be avoided in almost all cases (except when interfacing with the Windows API). Its size is implementation defined, and is not reliable. It has largely been deprecated.</p>
+  </li>
+  <li>
+    <p>char16_t and char32_t were added to C++11 to provide explicit support for 16-bit and 32-bit Unicode characters (8-bit Unicode characters are already supported by the normal char type).</p>
+  </li>
+</ul>
+
+<h2 id="literals">Literals</h2>
+
+<p><strong>Literal constants</strong> are literal numbers inserted into the code.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Type	Suffix</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>int</td>
+      <td>u or U</td>
+      <td>unsigned int</td>
+    </tr>
+    <tr>
+      <td>int</td>
+      <td>l or L</td>
+      <td>long</td>
+    </tr>
+    <tr>
+      <td>int</td>
+      <td>ul, uL, Ul, UL, lu, lU, Lu, or LU</td>
+      <td>unsigned long</td>
+    </tr>
+    <tr>
+      <td>int</td>
+      <td>ll or LL</td>
+      <td>long long</td>
+    </tr>
+    <tr>
+      <td>int</td>
+      <td>ull, uLL, Ull, ULL, llu, llU, LLu, or LLU</td>
+      <td>unsigned long long</td>
+    </tr>
+    <tr>
+      <td>double</td>
+      <td>f or F</td>
+      <td>float</td>
+    </tr>
+    <tr>
+      <td>double</td>
+      <td>l or L</td>
+      <td>long double</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>unsigned int nValue = 5u; // unsigned int
+long nValue2 = 5L; // long
+</code></pre>
+</div>
+
+<p><strong>Binary</strong> there are only 2 digits, <code class="highlighter-rouge">bin = 0b1;</code></p>
+
+<p><strong>Octal</strong> is base 8, <code class="highlighter-rouge">int x = 012;</code></p>
+
+<p><strong>Hexadecimal</strong> is base 16 <code class="highlighter-rouge">int x = 0xFF;</code></p>
+
+<p>C++14 also adds the ability to use a quotation mark (‘) as a digit separator.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>int bin = 0b1011'0010;  // assign binary 1011 0010 to the variable
+long value = 2'532'673'462; // much easier to read than 2532673462
+</code></pre>
+</div>
+
+<p><strong>magic number</strong> is a hard-coded literal (usually a number) in the middle of the code that does not have any context.</p>
+
+<p>Rule: Don’t use magic numbers in your code.</p>
+
+<h2 id="const-constexpr-and-symbolic-constants">Const, constexpr, and symbolic constants</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>const double gravity { 9.8 }; // preferred use of const before type
+int const sidesInSquare { 4 }; // okay, but not preferred
+</code></pre>
+</div>
+
+<p>Const variables must be initialized when you define them, and then that value can not be changed via assignment.</p>
+
+<p>const variables can be initialized from non-const values:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>std::cout &lt;&lt; "Enter your age: ";
+int age;
+std::cin &gt;&gt; age;
+
+const int usersAge (age); // usersAge can not be changed
+
+void printInteger(const int myValue)
+{
+    std::cout &lt;&lt; myValue;
+}
+</code></pre>
+</div>
+
+<p><strong>Constexpr</strong> ensures that the constant must be a compile-time constant:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>constexpr double gravity (9.8); // ok, the value of 9.8 can be resolved at compile-time
+constexpr int sum = 4 + 5; // ok, the value of 4 + 5 can be resolved at compile-time
+</code></pre>
+</div>
+
+<p>Rule: Any variable that should not change values after initialization should be declared as const (or constexpr).</p>
+
+<p><strong>symbolic constant</strong> is a name given to a constant literal value.</p>
+
+<p>Rule: Avoid using #define to create symbolic constants</p>
+
+<p>Rule: use const variables to provide a name and context for your magic numbers.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>const int maxStudentsPerClass { 30 };
+const int maxNameLength { 30 };
+</code></pre>
+</div>
+
+<p><strong>Using symbolic constants throughout a program</strong></p>
+
+<ul>
+  <li>Create a header file to hold these constants</li>
+  <li>Inside this header file, declare a namespace</li>
+  <li>Add all your constants inside the namespace (make sure they’re const)</li>
+  <li><code class="highlighter-rouge">#include</code> the header file wherever you need it</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">    <span class="c1">#ifndef CONSTANTS_H</span>
+    <span class="c1">#define CONSTANTS_H</span>
+
+    <span class="sr">//</span> <span class="n">define</span> <span class="n">your</span> <span class="n">own</span> <span class="n">namespace</span> <span class="n">to</span> <span class="n">hold</span> <span class="nb">constants</span>
+    <span class="n">namespace</span> <span class="nb">constants</span>
+    <span class="p">{</span>
+        <span class="n">const</span> <span class="n">double</span> <span class="n">pi</span><span class="p">(</span><span class="mi">3</span><span class="o">.</span><span class="mi">14159</span><span class="p">);</span>
+        <span class="n">const</span> <span class="n">double</span> <span class="n">avogadro</span><span class="p">(</span><span class="mi">6</span><span class="o">.</span><span class="mo">0221413</span><span class="n">e23</span><span class="p">);</span>
+        <span class="n">const</span> <span class="n">double</span> <span class="n">my_gravity</span><span class="p">(</span><span class="mi">9</span><span class="o">.</span><span class="mi">2</span><span class="p">);</span> <span class="sr">//</span> <span class="n">m</span><span class="o">/</span><span class="n">s</span><span class="o">^</span><span class="mi">2</span> <span class="o">--</span> <span class="n">gravity</span> <span class="n">is</span> <span class="n">light</span> <span class="n">on</span> <span class="n">this</span> <span class="n">planet</span>
+        <span class="sr">//</span> <span class="p">.</span><span class="nf">.</span><span class="p">.</span> <span class="nf">other</span> <span class="n">related</span> <span class="nb">constants</span>
+    <span class="p">}</span>
+    <span class="c1">#endif</span>
+    </code></pre></figure>
+
+<p>Use the scope resolution operator (::) to access your constants in .cpp files:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">    <span class="c1">#include "constants.h"</span>
+    <span class="n">double</span> <span class="n">circumference</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">*</span> <span class="nb">constants</span><span class="o">::</span><span class="n">pi</span><span class="p">;</span>
+    </code></pre></figure>
+
   </div>
 
 </article>

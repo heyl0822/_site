@@ -6,8 +6,8 @@
 </description>
     <link>http://heyl0822.github.io//_site/</link>
     <atom:link href="http://heyl0822.github.io//_site/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 23 May 2016 00:25:21 -0700</pubDate>
-    <lastBuildDate>Mon, 23 May 2016 00:25:21 -0700</lastBuildDate>
+    <pubDate>Mon, 23 May 2016 09:55:16 -0700</pubDate>
+    <lastBuildDate>Mon, 23 May 2016 09:55:16 -0700</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
     
       <item>
@@ -210,6 +210,573 @@
 &lt;p&gt;n-bit signed variable has a range of \( -( 2^{n-1} ) \) to \( 2^{n-1}-1 \).&lt;/p&gt;
 
 &lt;p&gt;An n-bit unsigned variable has a range of 0 to \( (2^n)-1 \).&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Size/Type&lt;/th&gt;
+      &lt;th&gt;Range&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1 byte signed&lt;/td&gt;
+      &lt;td&gt;-128 to 127&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1 byte unsigned&lt;/td&gt;
+      &lt;td&gt;0 to 255&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2 byte signed&lt;/td&gt;
+      &lt;td&gt;-32,768 to 32,767&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2 byte unsigned&lt;/td&gt;
+      &lt;td&gt;0 to 65,535&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;4 byte signed&lt;/td&gt;
+      &lt;td&gt;-2,147,483,648 to 2,147,483,647&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;4 byte unsigned&lt;/td&gt;
+      &lt;td&gt;0 to 4,294,967,295&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;8 byte signed&lt;/td&gt;
+      &lt;td&gt;-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;8 byte unsigned&lt;/td&gt;
+      &lt;td&gt;0 to 18,446,744,073,709,551,615&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Category&lt;/th&gt;
+      &lt;th&gt;Type&lt;/th&gt;
+      &lt;th&gt;Default Sign&lt;/th&gt;
+      &lt;th&gt;Note&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;character&lt;/td&gt;
+      &lt;td&gt;char&lt;/td&gt;
+      &lt;td&gt;Signed or Unsigned&lt;/td&gt;
+      &lt;td&gt;Usually signed&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;integer&lt;/td&gt;
+      &lt;td&gt;short&lt;/td&gt;
+      &lt;td&gt;Signed&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;int&lt;/td&gt;
+      &lt;td&gt;Signed&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;long&lt;/td&gt;
+      &lt;td&gt;Signed&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;long long&lt;/td&gt;
+      &lt;td&gt;Signed&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;Overflow&lt;/strong&gt; when bits are lost because a variable has not been allocated enough memory to store them.&lt;/p&gt;
+
+&lt;p&gt;Rule: Favor signed integers over unsigned integers&lt;/p&gt;
+
+&lt;p&gt;Rule: Do not depend on the results of overflow in your program.&lt;/p&gt;
+
+&lt;p&gt;Rule: Be careful when using integer division, as you will lose any fractional parts of the result&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Fixed-width integers&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Type&lt;/th&gt;
+      &lt;th&gt;Range&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;int8_t&lt;/td&gt;
+      &lt;td&gt;1 byte signed&lt;/td&gt;
+      &lt;td&gt;-128 to 127&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;uint8_t&lt;/td&gt;
+      &lt;td&gt;1 byte unsigned&lt;/td&gt;
+      &lt;td&gt;0 to 255&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;int16_t&lt;/td&gt;
+      &lt;td&gt;2 byte signed&lt;/td&gt;
+      &lt;td&gt;-32,768 to 32,767&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;uint16_t&lt;/td&gt;
+      &lt;td&gt;2 byte unsigned&lt;/td&gt;
+      &lt;td&gt;0 to 65,535&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;int32_t&lt;/td&gt;
+      &lt;td&gt;4 byte signed&lt;/td&gt;
+      &lt;td&gt;-2,147,483,648 to 2,147,483,647&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;uint32_t&lt;/td&gt;
+      &lt;td&gt;4 byte unsigned&lt;/td&gt;
+      &lt;td&gt;0 to 4,294,967,295&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;int64_t&lt;/td&gt;
+      &lt;td&gt;8 byte signed&lt;/td&gt;
+      &lt;td&gt;-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;uint64_t&lt;/td&gt;
+      &lt;td&gt;8 byte unsigned&lt;/td&gt;
+      &lt;td&gt;0 to 18,446,744,073,709,551,615&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Warning: int8_t and uint8_t may or may not behave like chars&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;int can be used when the integer size doesn’t matter and isn’t going to be large.&lt;/li&gt;
+  &lt;li&gt;Fixed-width integers should be used in all other cases, especially when you need an integer with a guaranteed width.&lt;/li&gt;
+  &lt;li&gt;Only use unsigned types if you have a compelling reason.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;floating-point-numbers&quot;&gt;Floating point numbers&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;floating point type variable&lt;/strong&gt; is a variable that can hold a real number. float, double, and long double.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Category&lt;/th&gt;
+      &lt;th&gt;Type&lt;/th&gt;
+      &lt;th&gt;Minimum Size&lt;/th&gt;
+      &lt;th&gt;Typical Size&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;floating point&lt;/td&gt;
+      &lt;td&gt;float&lt;/td&gt;
+      &lt;td&gt;4 bytes&lt;/td&gt;
+      &lt;td&gt;4 bytes&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;double&lt;/td&gt;
+      &lt;td&gt;4 bytes&lt;/td&gt;
+      &lt;td&gt;8 bytes&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;long double&lt;/td&gt;
+      &lt;td&gt;4 bytes&lt;/td&gt;
+      &lt;td&gt;8, 12, or 16 bytes&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int n(5); // 5 means integer
+double d(5.0); // 5.0 means floating point (double by default)
+float f(5.0f); // 5.0 means floating point, f suffix means float
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Scientific notation&lt;/strong&gt; is a useful shorthand for writing lengthy numbers in a concise manner.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;double d1(5000.0);
+double d2(5e3); // another way to assign 5000
+
+double d3(0.05);
+double d4(5e-2); // another way to assign 0.05
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;convert numbers to scientific notation&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Your exponent starts at zero.&lt;/li&gt;
+  &lt;li&gt;Slide the decimal so there is only one non-zero digit to the left of the decimal.&lt;/li&gt;
+  &lt;li&gt;Each place you slide the decimal to the left increases the exponent by 1.&lt;/li&gt;
+  &lt;li&gt;Each place you slide the decimal to the right decreases the exponent by 1.&lt;/li&gt;
+  &lt;li&gt;Trim off any leading zeros (on the left end)&lt;/li&gt;
+  &lt;li&gt;Trim off any trailing zeros (on the right end) if the original number had no decimal point. We’re assuming they’re not significant unless otherwise specified.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The digits in the significand (the part before the E) are called the &lt;strong&gt;significant digits&lt;/strong&gt;. The number of significant digits defines a number’s &lt;strong&gt;precision&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Start with: 600.410
+Slide decimal left 2 spaces: 6.00410e2
+No leading zeros to trim: 6.00410e2
+Don&#39;t trim trailing zeros: 6.00410e2 (6 significant digits)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;cout has a default precision of 6&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;std::cout &amp;lt;&amp;lt; std::setprecision(16); // show 16 digits
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Float values have between 6 and 9 digits of precision, with most float values having at least 7 significant digits. Double values have between 15 and 18 digits of precision. Long double has a minimum precision of 15, 18, or 33 significant digits depending on how many bytes it occupies.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Size&lt;/th&gt;
+      &lt;th&gt;Range&lt;/th&gt;
+      &lt;th&gt;Precision&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;4 bytes&lt;/td&gt;
+      &lt;td&gt;±1.18 x 10-38 to ±3.4 x 1038&lt;/td&gt;
+      &lt;td&gt;6-9 significant digits, typically 7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;8 bytes&lt;/td&gt;
+      &lt;td&gt;±2.23 x 10-308 to ±1.80 x 10308&lt;/td&gt;
+      &lt;td&gt;15-18 significant digits, typically 16&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;80-bits (12 bytes)&lt;/td&gt;
+      &lt;td&gt;±3.36 x 10-4932 to ±1.18 x 104932&lt;/td&gt;
+      &lt;td&gt;18-21 significant digits&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;16 bytes&lt;/td&gt;
+      &lt;td&gt;±3.36 x 10-4932 to ±1.18 x 104932&lt;/td&gt;
+      &lt;td&gt;33-36 significant digits&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Rule: Favor double over float unless space is at a premium, as the lack of precision in a float will often lead to inaccuracies.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Inf&lt;/strong&gt; which represents infinity. Inf can be positive or negative. &lt;strong&gt;NaN&lt;/strong&gt; which stands for “Not a Number”.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Floating point numbers are great for storing very large or very small numbers, including those with fractional components, so long as they have a limited number of significant digits (precision).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Floating point numbers often have small rounding errors, even when the number has fewer significant digits than the precision. Many times these go unnoticed because they are so small, and because the numbers are truncated for output. Consequently, comparisons of floating point numbers may not give the expected results. Performing mathematical operations on these values will cause the rounding errors to grow larger.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;boolean-values&quot;&gt;Boolean values&lt;/h2&gt;
+
+&lt;p&gt;To declare a boolean variable, we use the keyword &lt;strong&gt;bool&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bool b;
+bool b1 = true; // copy initialization
+bool b2(false); // direct initialization
+bool b3 { true }; // uniform initialization (C++11)
+
+std::cout &amp;lt;&amp;lt; std::boolalpha; // print bools as true or false
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Boolean values are also useful as the return values for functions that check whether something is true or not. Such functions are typically named starting with the word &lt;strong&gt;is&lt;/strong&gt; (e.g. isEqual) or &lt;strong&gt;has&lt;/strong&gt; (e.g. hasCommonFactor).&lt;/p&gt;
+
+&lt;h2 id=&quot;chars&quot;&gt;Chars&lt;/h2&gt;
+
+&lt;p&gt;A &lt;strong&gt;type cast&lt;/strong&gt; creates a value of one type from a value of another type. To convert between fundamental data types (for example, from a char to an int, or vice versa), we use a type cast called a &lt;strong&gt;static cast&lt;/strong&gt;. static casting doesn’t do any range checking&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;static_cast&amp;lt;new_type&amp;gt;(expression)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;static_cast&lt;/strong&gt; is the first cast you should attempt to use. It does things like implicit conversions between types (such as int to float, or pointer to void*), and it can also call explicit conversion functions (or implicit ones). In many cases, explicitly stating static_cast isn’t necessary, but it’s important to note that the T(something) syntax is equivalent to (T)something and should be avoided (more on that later). A T(something, something_else) is safe, however, and guaranteed to call the constructor.&lt;/p&gt;
+
+    &lt;p&gt;static_cast can also cast through inheritance hierarchies. It is unnecessary when casting upwards (towards a base class), but when casting downwards it can be used as long as it doesn’t cast through virtual inheritance. It does not do checking, however, and it is undefined behavior to static_cast down a hierarchy to a type that isn’t actually the type of the object.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;const_cast&lt;/strong&gt; can be used to remove or add const to a variable; no other C++ cast is capable of removing it (not even reinterpret_cast). It is important to note that modifying a formerly const value is only undefined if the original variable is const; if you use it to take the const off a reference to something that wasn’t declared with const, it is safe. This can be useful when overloading member functions based on const, for instance. It can also be used to add const to an object, such as to call a member function overload.&lt;/p&gt;
+
+    &lt;p&gt;const_cast also works similarly on volatile, though that’s less common.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;dynamic_cast&lt;/strong&gt; is almost exclusively used for handling polymorphism. You can cast a pointer or reference to any polymorphic type to any other class type (a polymorphic type has at least one virtual function, declared or inherited). You can use it for more than just casting downwards – you can cast sideways or even up another chain. The dynamic_cast will seek out the desired object and return it if possible. If it can’t, it will return nullptr in the case of a pointer, or throw std::bad_cast in the case of a reference.&lt;/p&gt;
+
+    &lt;p&gt;dynamic_cast has some limitations, though. It doesn’t work if there are multiple objects of the same type in the inheritance hierarchy (the so-called ‘dreaded diamond’) and you aren’t using virtual inheritance. It also can only go through public inheritance - it will always fail to travel through protected or private inheritance. This is rarely an issue, however, as such forms of inheritance are rare.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;reinterpret_cast&lt;/strong&gt; is the most dangerous cast, and should be used very sparingly. It turns one type directly into another - such as casting the value from one pointer to another, or storing a pointer in an int, or all sorts of other nasty things. Largely, the only guarantee you get with reinterpret_cast is that normally if you cast the result back to the original type, you will get the exact same value (but not if the intermediate type is smaller than the original type). There are a number of conversions that reinterpret_cast cannot do, too. It’s used primarily for particularly weird conversions and bit manipulations, like turning a raw data stream into actual data, or storing data in the low bits of an aligned pointer.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Escape sequences&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Symbol&lt;/th&gt;
+      &lt;th&gt;Meaning&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Alert&lt;/td&gt;
+      &lt;td&gt;\a&lt;/td&gt;
+      &lt;td&gt;Makes an alert, such as a beep&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Backspace&lt;/td&gt;
+      &lt;td&gt;\b&lt;/td&gt;
+      &lt;td&gt;Moves the cursor back one space&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Formfeed&lt;/td&gt;
+      &lt;td&gt;\f&lt;/td&gt;
+      &lt;td&gt;Moves the cursor to next logical page&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Newline&lt;/td&gt;
+      &lt;td&gt;\n&lt;/td&gt;
+      &lt;td&gt;Moves cursor to next line&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Carriage return&lt;/td&gt;
+      &lt;td&gt;\r&lt;/td&gt;
+      &lt;td&gt;Moves cursor to beginning of line&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Horizontal tab&lt;/td&gt;
+      &lt;td&gt;\t&lt;/td&gt;
+      &lt;td&gt;Prints a horizontal tab&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Vertical tab&lt;/td&gt;
+      &lt;td&gt;\v&lt;/td&gt;
+      &lt;td&gt;Prints a vertical tab&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Single quote&lt;/td&gt;
+      &lt;td&gt;\’&lt;/td&gt;
+      &lt;td&gt;Prints a single quote&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Double quote&lt;/td&gt;
+      &lt;td&gt;\”&lt;/td&gt;
+      &lt;td&gt;Prints a double quote&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Backslash&lt;/td&gt;
+      &lt;td&gt;\&lt;/td&gt;
+      &lt;td&gt;Prints a backslash&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Question mark&lt;/td&gt;
+      &lt;td&gt;\?&lt;/td&gt;
+      &lt;td&gt;Prints a question mark&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Octal number&lt;/td&gt;
+      &lt;td&gt;(number)&lt;/td&gt;
+      &lt;td&gt;Translates into char represented by octal&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Hex number&lt;/td&gt;
+      &lt;td&gt;\x(number)&lt;/td&gt;
+      &lt;td&gt;Translates into char represented by hex number&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;When std::cout is used for output, the output may be buffered – that is, std::cout may not send the text to the output device immediately (for performance reasons). Both ‘\n’ and std::endl will move the cursor to the next line. In addition, std::endl will also ensure that any queued output is actually output before continuing.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Use std::endl when you need to ensure your output is output immediately (e.g. when writing a record to a file, or when updating a progress bar). Note that this may have a performance cost, particularly if writing to the output device is slow (e.g. when writing a file to a disk).&lt;/li&gt;
+  &lt;li&gt;Use ‘\n’ in other cases.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;wchar_t, char16_t, and char32_t&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;wchar_t should be avoided in almost all cases (except when interfacing with the Windows API). Its size is implementation defined, and is not reliable. It has largely been deprecated.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;char16_t and char32_t were added to C++11 to provide explicit support for 16-bit and 32-bit Unicode characters (8-bit Unicode characters are already supported by the normal char type).&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;literals&quot;&gt;Literals&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Literal constants&lt;/strong&gt; are literal numbers inserted into the code.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Data&lt;/th&gt;
+      &lt;th&gt;Type	Suffix&lt;/th&gt;
+      &lt;th&gt;Meaning&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;int&lt;/td&gt;
+      &lt;td&gt;u or U&lt;/td&gt;
+      &lt;td&gt;unsigned int&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;int&lt;/td&gt;
+      &lt;td&gt;l or L&lt;/td&gt;
+      &lt;td&gt;long&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;int&lt;/td&gt;
+      &lt;td&gt;ul, uL, Ul, UL, lu, lU, Lu, or LU&lt;/td&gt;
+      &lt;td&gt;unsigned long&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;int&lt;/td&gt;
+      &lt;td&gt;ll or LL&lt;/td&gt;
+      &lt;td&gt;long long&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;int&lt;/td&gt;
+      &lt;td&gt;ull, uLL, Ull, ULL, llu, llU, LLu, or LLU&lt;/td&gt;
+      &lt;td&gt;unsigned long long&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;double&lt;/td&gt;
+      &lt;td&gt;f or F&lt;/td&gt;
+      &lt;td&gt;float&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;double&lt;/td&gt;
+      &lt;td&gt;l or L&lt;/td&gt;
+      &lt;td&gt;long double&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;unsigned int nValue = 5u; // unsigned int
+long nValue2 = 5L; // long
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Binary&lt;/strong&gt; there are only 2 digits, &lt;code class=&quot;highlighter-rouge&quot;&gt;bin = 0b1;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Octal&lt;/strong&gt; is base 8, &lt;code class=&quot;highlighter-rouge&quot;&gt;int x = 012;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Hexadecimal&lt;/strong&gt; is base 16 &lt;code class=&quot;highlighter-rouge&quot;&gt;int x = 0xFF;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;C++14 also adds the ability to use a quotation mark (‘) as a digit separator.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int bin = 0b1011&#39;0010;  // assign binary 1011 0010 to the variable
+long value = 2&#39;532&#39;673&#39;462; // much easier to read than 2532673462
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;magic number&lt;/strong&gt; is a hard-coded literal (usually a number) in the middle of the code that does not have any context.&lt;/p&gt;
+
+&lt;p&gt;Rule: Don’t use magic numbers in your code.&lt;/p&gt;
+
+&lt;h2 id=&quot;const-constexpr-and-symbolic-constants&quot;&gt;Const, constexpr, and symbolic constants&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const double gravity { 9.8 }; // preferred use of const before type
+int const sidesInSquare { 4 }; // okay, but not preferred
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Const variables must be initialized when you define them, and then that value can not be changed via assignment.&lt;/p&gt;
+
+&lt;p&gt;const variables can be initialized from non-const values:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;std::cout &amp;lt;&amp;lt; &quot;Enter your age: &quot;;
+int age;
+std::cin &amp;gt;&amp;gt; age;
+
+const int usersAge (age); // usersAge can not be changed
+
+void printInteger(const int myValue)
+{
+    std::cout &amp;lt;&amp;lt; myValue;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Constexpr&lt;/strong&gt; ensures that the constant must be a compile-time constant:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;constexpr double gravity (9.8); // ok, the value of 9.8 can be resolved at compile-time
+constexpr int sum = 4 + 5; // ok, the value of 4 + 5 can be resolved at compile-time
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Rule: Any variable that should not change values after initialization should be declared as const (or constexpr).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;symbolic constant&lt;/strong&gt; is a name given to a constant literal value.&lt;/p&gt;
+
+&lt;p&gt;Rule: Avoid using #define to create symbolic constants&lt;/p&gt;
+
+&lt;p&gt;Rule: use const variables to provide a name and context for your magic numbers.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const int maxStudentsPerClass { 30 };
+const int maxNameLength { 30 };
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Using symbolic constants throughout a program&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Create a header file to hold these constants&lt;/li&gt;
+  &lt;li&gt;Inside this header file, declare a namespace&lt;/li&gt;
+  &lt;li&gt;Add all your constants inside the namespace (make sure they’re const)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#include&lt;/code&gt; the header file wherever you need it&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;c1&quot;&gt;#ifndef CONSTANTS_H&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;#define CONSTANTS_H&lt;/span&gt;
+
+    &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;define&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;your&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;own&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hold&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;constants&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;constants&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;14159&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;avogadro&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0221413&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e23&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;my_gravity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gravity&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;light&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;planet&lt;/span&gt;
+        &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;other&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;related&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;constants&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;#endif&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Use the scope resolution operator (::) to access your constants in .cpp files:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;c1&quot;&gt;#include &quot;constants.h&quot;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;circumference&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;radius&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;constants&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 </description>
         <pubDate>Sun, 22 May 2016 16:50:11 -0700</pubDate>
         <link>http://heyl0822.github.io//_site/c++/2016/05/22/learn_c++_ch2_variables_and_fundamental_data_types.html</link>
