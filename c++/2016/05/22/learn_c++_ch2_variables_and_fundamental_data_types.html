@@ -952,6 +952,25 @@ const int maxNameLength { 30 };
     <span class="n">double</span> <span class="n">circumference</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">*</span> <span class="nb">constants</span><span class="o">::</span><span class="n">pi</span><span class="p">;</span>
     </code></pre></figure>
 
+<ul>
+  <li>
+    <p>Integers are used for holding whole numbers. When using integers, keep an eye out for overflow and integer division problems. Use fixed-width integers instead of the variable size integers.</p>
+  </li>
+  <li>
+    <p>Floating point numbers are used for holding real numbers (which can have fractional components). When using floating point numbers, keep an eye out for precision issues, rounding errors, and comparison issues.</p>
+  </li>
+  <li>
+    <p>Boolean values hold only true and false. They do not have any major issues.</p>
+  </li>
+  <li>
+    <p>Char values are integers that can be interpreted as an ASCII value. When using chars, be careful not to mix up ASCII code values and numbers, and watch for overflow and integer division problems.</p>
+  </li>
+  <li>
+    <p>Use the const keyword to declare symbolic constants instead of #define. It’s safer.</p>
+  </li>
+</ul>
+
+
   </div>
 
 </article>
