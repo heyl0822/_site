@@ -6,8 +6,8 @@
 </description>
     <link>http://heyl0822.github.io//_site/</link>
     <atom:link href="http://heyl0822.github.io//_site/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 25 May 2016 16:14:05 -0700</pubDate>
-    <lastBuildDate>Wed, 25 May 2016 16:14:05 -0700</lastBuildDate>
+    <pubDate>Wed, 25 May 2016 16:18:05 -0700</pubDate>
+    <lastBuildDate>Wed, 25 May 2016 16:18:05 -0700</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -578,6 +578,28 @@ auto i = 1 + 2; // 1 + 2 evaluates to an integer, so i will be type int
 &lt;p&gt;Starting with C++11, the auto keyword can be used in place of a variable’s type when doing an initialization in order to perform automatic type deduction.&lt;/p&gt;
 
 &lt;p&gt;Other uses of the auto keyword should generally be avoided except on an as-needed basis.&lt;/p&gt;
+
+&lt;h2 id=&quot;quick-review&quot;&gt;Quick review&lt;/h2&gt;
+
+&lt;p&gt;A block of statements (aka. a compound statement) is treated by the compiler as if it were a single statement. These are placed between curly brackets ({ and }) and used pretty much everywhere.&lt;/p&gt;
+
+&lt;p&gt;Local variables are created when the block they are part of is entered, and destroyed when it is exited. They can only be accessed inside the block in which they are declared.&lt;/p&gt;
+
+&lt;p&gt;Global variables are created when the program starts, and are destroyed when it ends. They can be used anywhere in the program. Non-const global variables should generally be avoided because they are evil.&lt;/p&gt;
+
+&lt;p&gt;The static keyword can be used to give a global variable internal linkage, so it can only be used in the file in which it is declared. It can also be used to give a local variable static duration, which means the local variable retains its value, even after it goes out of scope.&lt;/p&gt;
+
+&lt;p&gt;Namespaces are an area in which all names are guaranteed to be unique. Use of namespace is a great way to avoid naming collisions. Avoid use of “using statements” outside of functions.&lt;/p&gt;
+
+&lt;p&gt;Implicit type conversion happens when one type is converted into another type without using a cast. Explicit type conversion happens when one type is converted to another using a cast. In some cases, this is totally safe, and in others, data may be lost. Avoid C-style casts and use static_cast instead.&lt;/p&gt;
+
+&lt;p&gt;std::string offers an easy way to deal with text strings. Strings are always placed between double quotes.&lt;/p&gt;
+
+&lt;p&gt;Enumerated types let us define our own type where all of the possible values are enumerated. These are great for categorizing things. Enum classes work like enums but offer more type safety, and should be used instead of standard enums if your compiler is C++11 capable.&lt;/p&gt;
+
+&lt;p&gt;Typedefs allow us to create an alias for a type’s name. Fixed width integers are implemented using typedefs. Typedefs are useful for giving simple names to complicated types.&lt;/p&gt;
+
+&lt;p&gt;And finally, structs offer us a way to group related variables into a single structure and access them using the member selection operator (.). Object-oriented programming builds heavily on top of these, so if you learn one thing from this chapter, make sure it’s this one.&lt;/p&gt;
 </description>
         <pubDate>Wed, 25 May 2016 08:08:58 -0700</pubDate>
         <link>http://heyl0822.github.io//_site/c++/2016/05/25/learn_c++_ch4_variable_scope_and_more_types.html</link>
