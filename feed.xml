@@ -6,9 +6,233 @@
 </description>
     <link>http://heyl0822.github.io//_site/</link>
     <atom:link href="http://heyl0822.github.io//_site/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 25 May 2016 16:18:05 -0700</pubDate>
-    <lastBuildDate>Wed, 25 May 2016 16:18:05 -0700</lastBuildDate>
+    <pubDate>Sun, 05 Jun 2016 11:28:18 -0700</pubDate>
+    <lastBuildDate>Sun, 05 Jun 2016 11:28:18 -0700</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Learn C++ Ch5 Control Flow</title>
+        <description>&lt;h2 id=&quot;control-flow-introduction&quot;&gt;Control flow introduction&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;control flow statements&lt;/strong&gt; (also called flow control statements), which allow the programmer to change the CPU’s path through the program.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;halt&lt;/strong&gt; tells the program to quit running immediately. can be accomplished through use of the exit() function that is defined in the cstdlib header&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;jump&lt;/strong&gt; unconditionally causes the CPU to jump to another statement. The goto, break, and continue keywords all cause different types of jumps&lt;/p&gt;
+
+&lt;p&gt;A &lt;strong&gt;conditional branch&lt;/strong&gt; is a statement that causes the program to change the path of execution based on the value of an expression.&lt;/p&gt;
+
+&lt;p&gt;A &lt;strong&gt;loop&lt;/strong&gt; causes the program to repeatedly execute a series of statements until a given condition is false.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;exceptions&lt;/strong&gt; offer a mechanism for handling errors that occur in a function.&lt;/p&gt;
+
+&lt;h2 id=&quot;if-statements&quot;&gt;If statements&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if (expression)
+    statement
+else
+    statement2
+
+if (expression)
+{
+    statement
+}
+else
+{
+    statement2
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A statement with no body is called a &lt;strong&gt;null statement&lt;/strong&gt;, and it is declared by using a single semicolon in place of the statement.&lt;/p&gt;
+
+&lt;h2 id=&quot;switch-statements&quot;&gt;Switch statements&lt;/h2&gt;
+
+&lt;p&gt;We start a switch statement by using the &lt;strong&gt;switch&lt;/strong&gt; keyword, followed by the expression that we would like to evaluate.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;case label&lt;/strong&gt; is declared using the case keyword, and followed by a constant expression&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;default label&lt;/strong&gt; (often called the “default case”), which is declared using the default keyword.&lt;/p&gt;
+
+&lt;p&gt;A &lt;strong&gt;break statement&lt;/strong&gt; (declared using the break keyword) tells the compiler that we are done with this switch (or while, do while, or for loop).&lt;/p&gt;
+
+&lt;p&gt;Warning: Forgetting the break statement at the end of the case statements is one of the most common C++ mistakes made!&lt;/p&gt;
+
+&lt;h2 id=&quot;goto-statements&quot;&gt;Goto statements&lt;/h2&gt;
+
+&lt;p&gt;The &lt;strong&gt;goto statement&lt;/strong&gt; is a control flow statement that causes the CPU to jump to another spot in the code. This spot is identified through use of a statement label.&lt;/p&gt;
+
+&lt;p&gt;Rule: Avoid use of goto statements unless necessary&lt;/p&gt;
+
+&lt;h2 id=&quot;while-statements&quot;&gt;While statements&lt;/h2&gt;
+
+&lt;p&gt;A while statement is declared using the &lt;strong&gt;while&lt;/strong&gt; keyword. When a while statement is executed, the expression is evaluated.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;while (expression)
+    statement;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;do-while-statements&quot;&gt;Do while statements&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;do
+    statement;
+while (condition);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;for-statements&quot;&gt;For statements&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;for (init-statement; condition-expression; end-expression)
+   statement;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Multiple declarations&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;for (int iii=0, jjj=9; iii &amp;lt; 10; ++iii, --jjj)
+    cout &amp;lt;&amp;lt; iii &amp;lt;&amp;lt; &quot; &quot; &amp;lt;&amp;lt; jjj &amp;lt;&amp;lt; endl;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;break-and-continue&quot;&gt;Break and continue&lt;/h2&gt;
+
+&lt;p&gt;A break statement terminates the switch or loop, and execution continues at the first statement beyond the switch or loop. A return statement terminates the entire function that the loop is within, and execution continues at point where the function was called.&lt;/p&gt;
+
+&lt;p&gt;The continue statement provides a convenient way to jump back to the loop conditional earlier than normal, which can be used to bypass the remainder of the loop for an iteration.&lt;/p&gt;
+
+&lt;h2 id=&quot;random-number-generation&quot;&gt;Random number generation&lt;/h2&gt;
+
+&lt;p&gt;A &lt;strong&gt;pseudo-random number generator (PRNG)&lt;/strong&gt; is a program that takes a starting number (called a &lt;strong&gt;seed&lt;/strong&gt;), and performs mathematical operations on it to transform it into some other number that appears to be unrelated to the seed.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;srand()&lt;/strong&gt; sets the initial seed value to a value that is passed in by the caller. srand() should only be called once.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;rand()&lt;/strong&gt; generates the next random number in the sequence. That number will be a pseudo-random integer between 0 and RAND_MAX, a constant in cstdlib that is typically set to 32767.&lt;/p&gt;
+
+&lt;h2 id=&quot;stdcin-extraction-and-dealing-with-invalid-text-input&quot;&gt;std::cin, extraction, and dealing with invalid text input&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Types of invalid text input&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Input extraction succeeds but the input is meaningless to the program (e.g. entering ‘k’ as your mathematical operator).&lt;/p&gt;
+
+    &lt;p&gt;do input validation. This usually consists of 3 steps:&lt;/p&gt;
+
+    &lt;p&gt;1) Check whether the user’s input was what you were expecting.
+  2) If so, return the value to the user.
+  3) If not, tell the user something went wrong and have them try again.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Input extraction succeeds but the user enters additional input (e.g. entering ‘*q hello’ as your mathematical operator).&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;ignore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;32767&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;\n&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clear&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;up&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;32767&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;characters&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;out&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buffer&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;until&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;\n&#39;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;character&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;removed&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Input extraction succeeds but the user overflows a numeric value.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Input extraction fails (e.g. trying to enter ‘q’ into a numeric input).&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/ has a previous extraction failed?
+    {
+        /&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;yep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;so&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;let&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;s handle the failure
+        std::cin.clear(); // put us back in &#39;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;normal&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39; operation mode
+        std::cin.ignore(32767,&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;remove&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bad&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;double getDouble()
+{
+    while (1) // Loop until user enters a valid input
+    {
+        std::cout &amp;lt;&amp;lt; &quot;Enter a double value: &quot;;
+        double x;
+        std::cin &amp;gt;&amp;gt; x;
+
+        // Check for failed extraction
+        if (std::cin.fail()) // has a previous extraction failed?
+        {
+            // yep, so let&#39;s handle the failure
+            std::cin.clear(); // put us back in &#39;normal&#39; operation mode
+            std::cin.ignore(32767,&#39;\n&#39;); // and remove the bad input
+            std::cout &amp;lt;&amp;lt; &quot;Oops, that input is invalid.  Please try again.\n&quot;;
+        }
+        else
+        {
+            std::cin.ignore(32767,&#39;\n&#39;); // remove any extraneous input
+
+            // the user can&#39;t enter a meaningless double value, so we don&#39;t need to worry about validating that
+            return x;
+        }
+    }
+}
+
+char getOperator()
+{
+    while (1) // Loop until user enters a valid input
+    {
+        std::cout &amp;lt;&amp;lt; &quot;Enter one of the following: +, -, *, or /: &quot;;
+        char op;
+        std::cin &amp;gt;&amp;gt; op;
+
+        // Chars can accept any single input character, so no need to check for an invalid extraction here
+
+        std::cin.ignore(32767,&#39;\n&#39;); // remove any extraneous input
+
+        // Check whether the user entered meaningful input
+        if (op == &#39;+&#39; || op == &#39;-&#39; || op == &#39;*&#39; || op == &#39;/&#39;)
+            return op; // return it to the caller
+        else // otherwise tell the user what went wrong
+            std::cout &amp;lt;&amp;lt; &quot;Oops, that input is invalid.  Please try again.\n&quot;;
+        } // and try again
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Quick review&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;If statements allow us to execute a statement based on whether some condition is true. Else statements execute if the associated if statement is false. You can chain together multiple if and else statements.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Switch statements provide a cleaner and faster method for selecting between a number of discrete items. Switch statements pair great with enumerations.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Goto statements allow the program to jump to somewhere else in the code. Don’t use these.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;While loops allow the program to loop as long as a given condition is true. The condition is evaluated before the loop executes.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Do while loops are the same as while loops, but the condition is evaluated after the loop execution. They’re great for menus or things that need to execute at least once.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;For loops are the most used loop, and are perfect when you need to loop a specific number of times.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Break statements allow us to break out of a switch, while, do while, or for loop. Or a for each loop, which we haven’t covered yet.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Continue statements allow us to move immediately to the next loop iteration. Be careful when using these with while and do while loops, as your loop counter may not get incremented properly.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 05 Jun 2016 03:17:18 -0700</pubDate>
+        <link>http://heyl0822.github.io//_site/c++/2016/06/05/learn_c++_ch5_control_flow.html</link>
+        <guid isPermaLink="true">http://heyl0822.github.io//_site/c++/2016/06/05/learn_c++_ch5_control_flow.html</guid>
+        
+        
+        <category>c++</category>
+        
+      </item>
     
       <item>
         <title>Learn C++ Ch4 Variable Scope and More Types</title>
