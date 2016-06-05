@@ -7,12 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico?">
-  <title>Yanling&#39;s Blog</title>
-  <meta name="description" content="Yanling's fun time with computer graphics and programming related.
-">
+  <title>Learn C++ Ch5 Control Flow</title>
+  <meta name="description" content="Control flow introduction">
 
   <link rel="stylesheet" href="/_site/css/main.css">
-  <link rel="canonical" href="http://heyl0822.github.io//_site/">
+  <link rel="canonical" href="http://heyl0822.github.io//_site/c++/2016/06/05/learn_c++_ch5_control_flow.html">
   <link rel="alternate" type="application/rss+xml" title="Yanling's Blog" href="http://heyl0822.github.io//_site/feed.xml">
 </head>
 
@@ -175,85 +174,234 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="home">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <ul class="post-list">
-    
-      <li>
-          <span class="post-meta">Jun 5, 2016</span>
-          <span class="post-link">
-            <a href="/_site/c++/2016/06/05/learn_c++_ch5_control_flow.html">Learn C++ Ch5 Control Flow</a>
-          </span>
-        
-      </li>
-    
-      <li>
-          <span class="post-meta">May 25, 2016</span>
-          <span class="post-link">
-            <a href="/_site/c++/2016/05/25/learn_c++_ch4_variable_scope_and_more_types.html">Learn C++ Ch4 Variable Scope and More Types</a>
-          </span>
-        
-      </li>
-    
-      <li>
-          <span class="post-meta">May 23, 2016</span>
-          <span class="post-link">
-            <a href="/_site/c++/2016/05/23/learn_c++_ch3_Operators.html">Learn C++ Ch3 Operators</a>
-          </span>
-        
-      </li>
-    
-      <li>
-          <span class="post-meta">May 22, 2016</span>
-          <span class="post-link">
-            <a href="/_site/c++/2016/05/22/learn_c++_ch2_variables_and_fundamental_data_types.html">Learn C++ Ch2 Variables and Fundamental Data Types</a>
-          </span>
-        
-      </li>
-    
-      <li>
-          <span class="post-meta">May 21, 2016</span>
-          <span class="post-link">
-            <a href="/_site/c++/2016/05/21/learn_c++_ch1_c++_basics.html">Learn C++ Ch1 C++ Basics</a>
-          </span>
-        
-      </li>
-    
-      <li>
-          <span class="post-meta">May 19, 2016</span>
-          <span class="post-link">
-            <a href="/_site/c++/2016/05/19/learn_c++_ch0_introduction.html">Learn C++ Ch0 Introduction</a>
-          </span>
-        
-      </li>
-    
-      <li>
-          <span class="post-meta">May 15, 2016</span>
-          <span class="post-link">
-            <a href="/_site/computer/graphics/learn/2016/05/15/computer_graphics_textbooks.html">Computer Graphics Textbooks</a>
-          </span>
-        
-      </li>
-    
-      <li>
-          <span class="post-meta">May 11, 2016</span>
-          <span class="post-link">
-            <a href="/_site/syntax/note/2016/05/11/markdown-note.html">Markdown Note</a>
-          </span>
-        
-      </li>
-    
-      <li>
-          <span class="post-meta">May 11, 2016</span>
-          <span class="post-link">
-            <a href="/_site/syntax/note/2016/05/11/jekyll-note.html">Jekyll Note</a>
-          </span>
-        
-      </li>
-    
-  </ul>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Learn C++ Ch5 Control Flow</h1>
+    <p class="post-meta"><time datetime="2016-06-05T03:17:18-07:00" itemprop="datePublished">Jun 5, 2016</time></p>
+  </header>
 
+  <script type="text/javascript"
+          src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+  <div class="post-content" itemprop="articleBody">
+    <h2 id="control-flow-introduction">Control flow introduction</h2>
+
+<p><strong>control flow statements</strong> (also called flow control statements), which allow the programmer to change the CPU’s path through the program.</p>
+
+<p><strong>halt</strong> tells the program to quit running immediately. can be accomplished through use of the exit() function that is defined in the cstdlib header</p>
+
+<p><strong>jump</strong> unconditionally causes the CPU to jump to another statement. The goto, break, and continue keywords all cause different types of jumps</p>
+
+<p>A <strong>conditional branch</strong> is a statement that causes the program to change the path of execution based on the value of an expression.</p>
+
+<p>A <strong>loop</strong> causes the program to repeatedly execute a series of statements until a given condition is false.</p>
+
+<p><strong>exceptions</strong> offer a mechanism for handling errors that occur in a function.</p>
+
+<h2 id="if-statements">If statements</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>if (expression)
+    statement
+else
+    statement2
+
+if (expression)
+{
+    statement
+}
+else
+{
+    statement2
+}
+</code></pre>
 </div>
+
+<p>A statement with no body is called a <strong>null statement</strong>, and it is declared by using a single semicolon in place of the statement.</p>
+
+<h2 id="switch-statements">Switch statements</h2>
+
+<p>We start a switch statement by using the <strong>switch</strong> keyword, followed by the expression that we would like to evaluate.</p>
+
+<p><strong>case label</strong> is declared using the case keyword, and followed by a constant expression</p>
+
+<p><strong>default label</strong> (often called the “default case”), which is declared using the default keyword.</p>
+
+<p>A <strong>break statement</strong> (declared using the break keyword) tells the compiler that we are done with this switch (or while, do while, or for loop).</p>
+
+<p>Warning: Forgetting the break statement at the end of the case statements is one of the most common C++ mistakes made!</p>
+
+<h2 id="goto-statements">Goto statements</h2>
+
+<p>The <strong>goto statement</strong> is a control flow statement that causes the CPU to jump to another spot in the code. This spot is identified through use of a statement label.</p>
+
+<p>Rule: Avoid use of goto statements unless necessary</p>
+
+<h2 id="while-statements">While statements</h2>
+
+<p>A while statement is declared using the <strong>while</strong> keyword. When a while statement is executed, the expression is evaluated.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>while (expression)
+    statement;
+</code></pre>
+</div>
+
+<h2 id="do-while-statements">Do while statements</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>do
+    statement;
+while (condition);
+</code></pre>
+</div>
+
+<h2 id="for-statements">For statements</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>for (init-statement; condition-expression; end-expression)
+   statement;
+</code></pre>
+</div>
+
+<p><strong>Multiple declarations</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>for (int iii=0, jjj=9; iii &lt; 10; ++iii, --jjj)
+    cout &lt;&lt; iii &lt;&lt; " " &lt;&lt; jjj &lt;&lt; endl;
+</code></pre>
+</div>
+
+<h2 id="break-and-continue">Break and continue</h2>
+
+<p>A break statement terminates the switch or loop, and execution continues at the first statement beyond the switch or loop. A return statement terminates the entire function that the loop is within, and execution continues at point where the function was called.</p>
+
+<p>The continue statement provides a convenient way to jump back to the loop conditional earlier than normal, which can be used to bypass the remainder of the loop for an iteration.</p>
+
+<h2 id="random-number-generation">Random number generation</h2>
+
+<p>A <strong>pseudo-random number generator (PRNG)</strong> is a program that takes a starting number (called a <strong>seed</strong>), and performs mathematical operations on it to transform it into some other number that appears to be unrelated to the seed.</p>
+
+<p><strong>srand()</strong> sets the initial seed value to a value that is passed in by the caller. srand() should only be called once.</p>
+
+<p><strong>rand()</strong> generates the next random number in the sequence. That number will be a pseudo-random integer between 0 and RAND_MAX, a constant in cstdlib that is typically set to 32767.</p>
+
+<h2 id="stdcin-extraction-and-dealing-with-invalid-text-input">std::cin, extraction, and dealing with invalid text input</h2>
+
+<p><strong>Types of invalid text input</strong></p>
+
+<ul>
+  <li>
+    <p>Input extraction succeeds but the input is meaningless to the program (e.g. entering ‘k’ as your mathematical operator).</p>
+
+    <p>do input validation. This usually consists of 3 steps:</p>
+
+    <p>1) Check whether the user’s input was what you were expecting.
+  2) If so, return the value to the user.
+  3) If not, tell the user something went wrong and have them try again.</p>
+  </li>
+  <li>
+    <p>Input extraction succeeds but the user enters additional input (e.g. entering ‘*q hello’ as your mathematical operator).</p>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">    <span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">.</span><span class="nf">ignore</span><span class="p">(</span><span class="mi">32767</span><span class="p">,</span> <span class="s1">'\n'</span><span class="p">);</span>  <span class="sr">//</span> <span class="n">clear</span> <span class="p">(</span><span class="n">up</span> <span class="n">to</span> <span class="mi">32767</span><span class="p">)</span> <span class="n">characters</span> <span class="n">out</span> <span class="n">of</span> <span class="n">the</span> <span class="n">buffer</span> <span class="k">until</span> <span class="n">a</span> <span class="s1">'\n'</span> <span class="n">character</span> <span class="n">is</span> <span class="n">removed</span>
+    </code></pre></figure>
+
+<ul>
+  <li>
+    <p>Input extraction succeeds but the user overflows a numeric value.</p>
+  </li>
+  <li>
+    <p>Input extraction fails (e.g. trying to enter ‘q’ into a numeric input).</p>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">    <span class="k">if</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">.</span><span class="nf">fail</span><span class="p">())</span> <span class="o">/</span><span class="sr">/ has a previous extraction failed?
+    {
+        /</span><span class="o">/</span> <span class="n">yep</span><span class="p">,</span> <span class="n">so</span> <span class="n">let</span><span class="s1">'s handle the failure
+        std::cin.clear(); // put us back in '</span><span class="n">normal</span><span class="s1">' operation mode
+        std::cin.ignore(32767,'</span><span class="p">\</span><span class="n">n</span><span class="err">'</span><span class="p">);</span> <span class="sr">//</span> <span class="n">and</span> <span class="n">remove</span> <span class="n">the</span> <span class="n">bad</span> <span class="n">input</span>
+    <span class="p">}</span>
+    </code></pre></figure>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>double getDouble()
+{
+    while (1) // Loop until user enters a valid input
+    {
+        std::cout &lt;&lt; "Enter a double value: ";
+        double x;
+        std::cin &gt;&gt; x;
+
+        // Check for failed extraction
+        if (std::cin.fail()) // has a previous extraction failed?
+        {
+            // yep, so let's handle the failure
+            std::cin.clear(); // put us back in 'normal' operation mode
+            std::cin.ignore(32767,'\n'); // and remove the bad input
+            std::cout &lt;&lt; "Oops, that input is invalid.  Please try again.\n";
+        }
+        else
+        {
+            std::cin.ignore(32767,'\n'); // remove any extraneous input
+
+            // the user can't enter a meaningless double value, so we don't need to worry about validating that
+            return x;
+        }
+    }
+}
+
+char getOperator()
+{
+    while (1) // Loop until user enters a valid input
+    {
+        std::cout &lt;&lt; "Enter one of the following: +, -, *, or /: ";
+        char op;
+        std::cin &gt;&gt; op;
+
+        // Chars can accept any single input character, so no need to check for an invalid extraction here
+
+        std::cin.ignore(32767,'\n'); // remove any extraneous input
+
+        // Check whether the user entered meaningful input
+        if (op == '+' || op == '-' || op == '*' || op == '/')
+            return op; // return it to the caller
+        else // otherwise tell the user what went wrong
+            std::cout &lt;&lt; "Oops, that input is invalid.  Please try again.\n";
+        } // and try again
+}
+</code></pre>
+</div>
+
+<p><strong>Quick review</strong></p>
+
+<ul>
+  <li>
+    <p>If statements allow us to execute a statement based on whether some condition is true. Else statements execute if the associated if statement is false. You can chain together multiple if and else statements.</p>
+  </li>
+  <li>
+    <p>Switch statements provide a cleaner and faster method for selecting between a number of discrete items. Switch statements pair great with enumerations.</p>
+  </li>
+  <li>
+    <p>Goto statements allow the program to jump to somewhere else in the code. Don’t use these.</p>
+  </li>
+  <li>
+    <p>While loops allow the program to loop as long as a given condition is true. The condition is evaluated before the loop executes.</p>
+  </li>
+  <li>
+    <p>Do while loops are the same as while loops, but the condition is evaluated after the loop execution. They’re great for menus or things that need to execute at least once.</p>
+  </li>
+  <li>
+    <p>For loops are the most used loop, and are perfect when you need to loop a specific number of times.</p>
+  </li>
+  <li>
+    <p>Break statements allow us to break out of a switch, while, do while, or for loop. Or a for each loop, which we haven’t covered yet.</p>
+  </li>
+  <li>
+    <p>Continue statements allow us to move immediately to the next loop iteration. Be careful when using these with while and do while loops, as your loop counter may not get incremented properly.</p>
+  </li>
+</ul>
+
+  </div>
+
+</article>
 
       </div>
     </div>

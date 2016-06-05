@@ -6,9 +6,833 @@
 </description>
     <link>http://heyl0822.github.io//_site/</link>
     <atom:link href="http://heyl0822.github.io//_site/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 24 May 2016 00:45:52 -0700</pubDate>
-    <lastBuildDate>Tue, 24 May 2016 00:45:52 -0700</lastBuildDate>
+    <pubDate>Sun, 05 Jun 2016 11:28:18 -0700</pubDate>
+    <lastBuildDate>Sun, 05 Jun 2016 11:28:18 -0700</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Learn C++ Ch5 Control Flow</title>
+        <description>&lt;h2 id=&quot;control-flow-introduction&quot;&gt;Control flow introduction&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;control flow statements&lt;/strong&gt; (also called flow control statements), which allow the programmer to change the CPU’s path through the program.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;halt&lt;/strong&gt; tells the program to quit running immediately. can be accomplished through use of the exit() function that is defined in the cstdlib header&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;jump&lt;/strong&gt; unconditionally causes the CPU to jump to another statement. The goto, break, and continue keywords all cause different types of jumps&lt;/p&gt;
+
+&lt;p&gt;A &lt;strong&gt;conditional branch&lt;/strong&gt; is a statement that causes the program to change the path of execution based on the value of an expression.&lt;/p&gt;
+
+&lt;p&gt;A &lt;strong&gt;loop&lt;/strong&gt; causes the program to repeatedly execute a series of statements until a given condition is false.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;exceptions&lt;/strong&gt; offer a mechanism for handling errors that occur in a function.&lt;/p&gt;
+
+&lt;h2 id=&quot;if-statements&quot;&gt;If statements&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if (expression)
+    statement
+else
+    statement2
+
+if (expression)
+{
+    statement
+}
+else
+{
+    statement2
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A statement with no body is called a &lt;strong&gt;null statement&lt;/strong&gt;, and it is declared by using a single semicolon in place of the statement.&lt;/p&gt;
+
+&lt;h2 id=&quot;switch-statements&quot;&gt;Switch statements&lt;/h2&gt;
+
+&lt;p&gt;We start a switch statement by using the &lt;strong&gt;switch&lt;/strong&gt; keyword, followed by the expression that we would like to evaluate.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;case label&lt;/strong&gt; is declared using the case keyword, and followed by a constant expression&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;default label&lt;/strong&gt; (often called the “default case”), which is declared using the default keyword.&lt;/p&gt;
+
+&lt;p&gt;A &lt;strong&gt;break statement&lt;/strong&gt; (declared using the break keyword) tells the compiler that we are done with this switch (or while, do while, or for loop).&lt;/p&gt;
+
+&lt;p&gt;Warning: Forgetting the break statement at the end of the case statements is one of the most common C++ mistakes made!&lt;/p&gt;
+
+&lt;h2 id=&quot;goto-statements&quot;&gt;Goto statements&lt;/h2&gt;
+
+&lt;p&gt;The &lt;strong&gt;goto statement&lt;/strong&gt; is a control flow statement that causes the CPU to jump to another spot in the code. This spot is identified through use of a statement label.&lt;/p&gt;
+
+&lt;p&gt;Rule: Avoid use of goto statements unless necessary&lt;/p&gt;
+
+&lt;h2 id=&quot;while-statements&quot;&gt;While statements&lt;/h2&gt;
+
+&lt;p&gt;A while statement is declared using the &lt;strong&gt;while&lt;/strong&gt; keyword. When a while statement is executed, the expression is evaluated.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;while (expression)
+    statement;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;do-while-statements&quot;&gt;Do while statements&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;do
+    statement;
+while (condition);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;for-statements&quot;&gt;For statements&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;for (init-statement; condition-expression; end-expression)
+   statement;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Multiple declarations&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;for (int iii=0, jjj=9; iii &amp;lt; 10; ++iii, --jjj)
+    cout &amp;lt;&amp;lt; iii &amp;lt;&amp;lt; &quot; &quot; &amp;lt;&amp;lt; jjj &amp;lt;&amp;lt; endl;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;break-and-continue&quot;&gt;Break and continue&lt;/h2&gt;
+
+&lt;p&gt;A break statement terminates the switch or loop, and execution continues at the first statement beyond the switch or loop. A return statement terminates the entire function that the loop is within, and execution continues at point where the function was called.&lt;/p&gt;
+
+&lt;p&gt;The continue statement provides a convenient way to jump back to the loop conditional earlier than normal, which can be used to bypass the remainder of the loop for an iteration.&lt;/p&gt;
+
+&lt;h2 id=&quot;random-number-generation&quot;&gt;Random number generation&lt;/h2&gt;
+
+&lt;p&gt;A &lt;strong&gt;pseudo-random number generator (PRNG)&lt;/strong&gt; is a program that takes a starting number (called a &lt;strong&gt;seed&lt;/strong&gt;), and performs mathematical operations on it to transform it into some other number that appears to be unrelated to the seed.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;srand()&lt;/strong&gt; sets the initial seed value to a value that is passed in by the caller. srand() should only be called once.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;rand()&lt;/strong&gt; generates the next random number in the sequence. That number will be a pseudo-random integer between 0 and RAND_MAX, a constant in cstdlib that is typically set to 32767.&lt;/p&gt;
+
+&lt;h2 id=&quot;stdcin-extraction-and-dealing-with-invalid-text-input&quot;&gt;std::cin, extraction, and dealing with invalid text input&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Types of invalid text input&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Input extraction succeeds but the input is meaningless to the program (e.g. entering ‘k’ as your mathematical operator).&lt;/p&gt;
+
+    &lt;p&gt;do input validation. This usually consists of 3 steps:&lt;/p&gt;
+
+    &lt;p&gt;1) Check whether the user’s input was what you were expecting.
+  2) If so, return the value to the user.
+  3) If not, tell the user something went wrong and have them try again.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Input extraction succeeds but the user enters additional input (e.g. entering ‘*q hello’ as your mathematical operator).&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;ignore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;32767&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;\n&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clear&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;up&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;32767&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;characters&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;out&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buffer&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;until&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;\n&#39;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;character&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;removed&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Input extraction succeeds but the user overflows a numeric value.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Input extraction fails (e.g. trying to enter ‘q’ into a numeric input).&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/ has a previous extraction failed?
+    {
+        /&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;yep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;so&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;let&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;s handle the failure
+        std::cin.clear(); // put us back in &#39;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;normal&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39; operation mode
+        std::cin.ignore(32767,&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;remove&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bad&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;double getDouble()
+{
+    while (1) // Loop until user enters a valid input
+    {
+        std::cout &amp;lt;&amp;lt; &quot;Enter a double value: &quot;;
+        double x;
+        std::cin &amp;gt;&amp;gt; x;
+
+        // Check for failed extraction
+        if (std::cin.fail()) // has a previous extraction failed?
+        {
+            // yep, so let&#39;s handle the failure
+            std::cin.clear(); // put us back in &#39;normal&#39; operation mode
+            std::cin.ignore(32767,&#39;\n&#39;); // and remove the bad input
+            std::cout &amp;lt;&amp;lt; &quot;Oops, that input is invalid.  Please try again.\n&quot;;
+        }
+        else
+        {
+            std::cin.ignore(32767,&#39;\n&#39;); // remove any extraneous input
+
+            // the user can&#39;t enter a meaningless double value, so we don&#39;t need to worry about validating that
+            return x;
+        }
+    }
+}
+
+char getOperator()
+{
+    while (1) // Loop until user enters a valid input
+    {
+        std::cout &amp;lt;&amp;lt; &quot;Enter one of the following: +, -, *, or /: &quot;;
+        char op;
+        std::cin &amp;gt;&amp;gt; op;
+
+        // Chars can accept any single input character, so no need to check for an invalid extraction here
+
+        std::cin.ignore(32767,&#39;\n&#39;); // remove any extraneous input
+
+        // Check whether the user entered meaningful input
+        if (op == &#39;+&#39; || op == &#39;-&#39; || op == &#39;*&#39; || op == &#39;/&#39;)
+            return op; // return it to the caller
+        else // otherwise tell the user what went wrong
+            std::cout &amp;lt;&amp;lt; &quot;Oops, that input is invalid.  Please try again.\n&quot;;
+        } // and try again
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Quick review&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;If statements allow us to execute a statement based on whether some condition is true. Else statements execute if the associated if statement is false. You can chain together multiple if and else statements.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Switch statements provide a cleaner and faster method for selecting between a number of discrete items. Switch statements pair great with enumerations.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Goto statements allow the program to jump to somewhere else in the code. Don’t use these.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;While loops allow the program to loop as long as a given condition is true. The condition is evaluated before the loop executes.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Do while loops are the same as while loops, but the condition is evaluated after the loop execution. They’re great for menus or things that need to execute at least once.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;For loops are the most used loop, and are perfect when you need to loop a specific number of times.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Break statements allow us to break out of a switch, while, do while, or for loop. Or a for each loop, which we haven’t covered yet.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Continue statements allow us to move immediately to the next loop iteration. Be careful when using these with while and do while loops, as your loop counter may not get incremented properly.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 05 Jun 2016 03:17:18 -0700</pubDate>
+        <link>http://heyl0822.github.io//_site/c++/2016/06/05/learn_c++_ch5_control_flow.html</link>
+        <guid isPermaLink="true">http://heyl0822.github.io//_site/c++/2016/06/05/learn_c++_ch5_control_flow.html</guid>
+        
+        
+        <category>c++</category>
+        
+      </item>
+    
+      <item>
+        <title>Learn C++ Ch4 Variable Scope and More Types</title>
+        <description>&lt;h2 id=&quot;blocks-compound-statements&quot;&gt;Blocks (compound statements)&lt;/h2&gt;
+
+&lt;p&gt;A &lt;strong&gt;block&lt;/strong&gt; of statements, also called a &lt;strong&gt;compound statement&lt;/strong&gt;, is a group of statements that is treated by the compiler as if it were a single statement.&lt;/p&gt;
+
+&lt;p&gt;A variable’s &lt;strong&gt;scope&lt;/strong&gt; determines where a variable is accessible.&lt;/p&gt;
+
+&lt;p&gt;A variable’s &lt;strong&gt;duration&lt;/strong&gt; determines where it is created and destroyed.&lt;/p&gt;
+
+&lt;p&gt;Variables defined inside a block are called &lt;strong&gt;local variables&lt;/strong&gt;. Local variables have &lt;strong&gt;automatic duration&lt;/strong&gt;, which means they are created when the block they are part of is entered, and destroyed when the block they are part of is exited. Local variables have &lt;strong&gt;block scope&lt;/strong&gt; (also called &lt;strong&gt;local scope&lt;/strong&gt;), which means they enter scope at the point of declaration and go out of scope at the end of the block that they are defined in.&lt;/p&gt;
+
+&lt;p&gt;Note that variables inside nested blocks can have the same name as variable inside outer blocks. When this happens, the nested variable “hides” the outer variable. This is called &lt;strong&gt;name hiding&lt;/strong&gt; or &lt;strong&gt;shadowing&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Rule: Define variables in the smallest scope possible.
+Rule: Avoid using nested variables with the same names as variables in an outer block.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Summary&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Variables defined inside blocks are called local variables. These variables can only be accessed inside the block in which they are defined (including nested blocks), and they are destroyed as soon as the block ends.&lt;/p&gt;
+
+&lt;p&gt;Define variables in the smallest scope that they are used. If a variable is only used within a nested block, define it within the nested block.&lt;/p&gt;
+
+&lt;h2 id=&quot;global-variables-and-linkage&quot;&gt;Global variables and linkage&lt;/h2&gt;
+
+&lt;p&gt;Variables declared outside of a block are called &lt;strong&gt;global variables&lt;/strong&gt;. Global variables have &lt;strong&gt;static duration&lt;/strong&gt;, which means they are created when the program starts and are destroyed when it ends. Global variables have &lt;strong&gt;global scope&lt;/strong&gt; (also called “global namespace scope” or “file scope”), which means they are visible until the end of the file in which they are declared.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Defining global variables&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;global variables are declared at the top of a file, below the includes, but above any code.&lt;/p&gt;
+
+&lt;p&gt;the global scope operator (::) can be used to tell the compiler you mean the global version instead of the local version.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int g_x; // global variable g_x
+const int g_y(2); // global variable g_y
+
+int value = 7; // hides the global variable value
+value++; // increments local value, not global value
+::value--;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;many developers prefix global variable names with “g_” to indicate that they are global. This both helps identify global variables as well as avoids naming conflicts with local variables.&lt;/p&gt;
+
+&lt;p&gt;A variable’s &lt;strong&gt;linkage&lt;/strong&gt; determines whether multiple instances of an identifier refer to the same variable or not.&lt;/p&gt;
+
+&lt;p&gt;A variable with &lt;strong&gt;internal linkage&lt;/strong&gt; is called an internal variable (or static variable). Variables with internal linkage can be used anywhere within the file they are defined in, but can not be referenced outside the file they exist in.&lt;/p&gt;
+
+&lt;p&gt;A variable with &lt;strong&gt;external linkage&lt;/strong&gt; is called an external variable. Variables with external linkage can be used both in the file they are defined in, as well as in other files.&lt;/p&gt;
+
+&lt;p&gt;If we want to make a global variable internal (able to be used only within a single file), we can use the &lt;strong&gt;static&lt;/strong&gt; keyword to do so:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;static int g_x; // g_x is static, and can only be used within this file
+
+int main()
+{
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;if we want to make a global variable external (able to be used anywhere in our program), we can use the &lt;strong&gt;extern&lt;/strong&gt; keyword to do so:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;extern double g_y(9.8); // g_y is external, and can be used by other files
+
+int main()
+{
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;By default, non-const variables declared outside of a block are assumed to be external. However, const variables declared outside of a block are assumed to be internal.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Variable forward declarations via the extern keyword&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;in order to use an external global variable that has been declared in another file, you have to use a variable forward declaration. For variables, creating a forward declaration is also done via the &lt;strong&gt;extern&lt;/strong&gt; keyword.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Summary&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Global variables have global scope, and can be used anywhere in the program. Like functions, you must use a forward declaration (via keyword extern) to use a global variable defined in another file.&lt;/p&gt;
+
+&lt;p&gt;By default, non-const global variables have external linkage. You can use the static keyword to explicitly make them internal if desired.
+By default, const global variables have internal linkage. You can use the extern keyword to explicitly make them external if desired.&lt;/p&gt;
+
+&lt;p&gt;Use a g_ prefix to help identify your non-const global variables.&lt;/p&gt;
+
+&lt;p&gt;Here’s a summary chart of the use of the extern keyword for non-const and const variable use cases:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Uninitialized&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;definition:
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g_x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;       &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;defines&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;uninitialized&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;global&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;variable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;external&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;linkage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g_x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;allowed: &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;variables&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;must&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;be&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initialized&lt;/span&gt;
+
+    &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Forward&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;declaration&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;via&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;extern&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;keyword:
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;extern&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g_z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;       &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;forward&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;declaration&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;global&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;variable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;defined&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elsewhere&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;extern&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g_z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;forward&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;declaration&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;global&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;variable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;defined&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elsewhere&lt;/span&gt;
+
+    &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Initialized&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;definition:
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g_y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;       &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;defines&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initialized&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;global&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;variable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;external&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;linkage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g_y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;defines&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initialized&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;variable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;internal&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;linkage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Initialized&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;definition&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;w&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;extern&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;keyword:
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;extern&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g_w&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;       &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;defines&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initialized&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;global&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;variable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;external&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;linkage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;extern&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keyword&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;redundant&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;extern&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g_w&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;defines&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initialized&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;global&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;variable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;external&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;linkage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Avoid use of non-const global variables if at all possible! If you do have to use them, use them sensibly and cautiously.&lt;/p&gt;
+
+&lt;p&gt;Const global variables (symbolic constants) are fine to use, so long as you use proper naming conventions.&lt;/p&gt;
+
+&lt;h2 id=&quot;static-duration-variables&quot;&gt;Static duration variables&lt;/h2&gt;
+
+&lt;p&gt;A &lt;strong&gt;static duration&lt;/strong&gt; variable (also called a “static variable”) is one that retains its value even after the scope in which it has been created has been exited! Static duration variables are only created (and initialized) once, and then they are persisted throughout the life of the program.&lt;/p&gt;
+
+&lt;h2 id=&quot;scope-duration-and-likage-summary&quot;&gt;Scope, duration and likage summary&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Scope summary&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;A identifier’s &lt;strong&gt;scope&lt;/strong&gt; determines where it is accessible. An identifier that is out of scope can not be accessed.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Variables with &lt;strong&gt;block scope / local scope&lt;/strong&gt; can only be accessed within the block in which they are declared. This includes:
+    &lt;ul&gt;
+      &lt;li&gt;Local variables&lt;/li&gt;
+      &lt;li&gt;Function parameters&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Variables with &lt;strong&gt;global scope / file scope&lt;/strong&gt; can be accessed anywhere in the file. This includes:
+    &lt;ul&gt;
+      &lt;li&gt;Global variables&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Duration summary&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;A variable’s &lt;strong&gt;duration&lt;/strong&gt; determines when it is created and destroyed.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Variables with &lt;strong&gt;automatic duration&lt;/strong&gt; are created when the block they are part of is entered, and destroyed when the block they are part of is exited. This includes:
+    &lt;ul&gt;
+      &lt;li&gt;Normal local variables&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Variables with &lt;strong&gt;static duration&lt;/strong&gt; are created when the program begins and destroyed when the program ends. This includes:
+    &lt;ul&gt;
+      &lt;li&gt;Global variables&lt;/li&gt;
+      &lt;li&gt;Static local variables&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Variables with &lt;strong&gt;dynamic duration&lt;/strong&gt; are created and destroyed by programmer request. This includes:
+    &lt;ul&gt;
+      &lt;li&gt;Dynamically allocated variables (we’ll talk about these when we cover dynamic allocation in chapter 6)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Linkage summary&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;An identifier’s linkage determines whether multiple instances of an identifier refer to the same identifier or not.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Identifiers with &lt;strong&gt;no linkage&lt;/strong&gt; mean the identifier only refers to itself. This includes:
+    &lt;ul&gt;
+      &lt;li&gt;Normal local variables&lt;/li&gt;
+      &lt;li&gt;User-defined types, such as enums, typedefs, and classes declared inside a block (we’ll cover these in later lessons).&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Identifiers with &lt;strong&gt;internal linkage&lt;/strong&gt; can be accessed anywhere within the file it is declared. This includes:
+    &lt;ul&gt;
+      &lt;li&gt;Static global variables (initialized or uninitialized)&lt;/li&gt;
+      &lt;li&gt;Const global variables&lt;/li&gt;
+      &lt;li&gt;Static functions (we’ll cover these in chapter 7)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Identifiers with &lt;strong&gt;external linkage&lt;/strong&gt; can be accessed anywhere within the file it is declared, or other files. This includes:
+    &lt;ul&gt;
+      &lt;li&gt;Normal functions&lt;/li&gt;
+      &lt;li&gt;Non-const global variables (initialized or uninitialized)&lt;/li&gt;
+      &lt;li&gt;Extern const global variables&lt;/li&gt;
+      &lt;li&gt;User-defined types, such as enums, typedefs, and classes declared in the global scope (we’ll cover these in later lessons).&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can use a forward declaration to access a function in another file.&lt;/p&gt;
+
+&lt;p&gt;You can use the extern keyword to access a variable with external linkage in another file.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Variable scope, duration, and linkage summary&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Type&lt;/th&gt;
+      &lt;th&gt;Example&lt;/th&gt;
+      &lt;th&gt;Scope&lt;/th&gt;
+      &lt;th&gt;Duration&lt;/th&gt;
+      &lt;th&gt;Linkage&lt;/th&gt;
+      &lt;th&gt;Notes&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Local variable&lt;/td&gt;
+      &lt;td&gt;int x;&lt;/td&gt;
+      &lt;td&gt;Block scope&lt;/td&gt;
+      &lt;td&gt;Automatic duratio&lt;/td&gt;
+      &lt;td&gt;No linkage&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Static local variable&lt;/td&gt;
+      &lt;td&gt;static int x;&lt;/td&gt;
+      &lt;td&gt;Block scope&lt;/td&gt;
+      &lt;td&gt;Static duration&lt;/td&gt;
+      &lt;td&gt;No linkage&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Dynamic variable&lt;/td&gt;
+      &lt;td&gt;int *x = new int;&lt;/td&gt;
+      &lt;td&gt;Block scope&lt;/td&gt;
+      &lt;td&gt;Dynamic duration&lt;/td&gt;
+      &lt;td&gt;No linkage&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Function parameter&lt;/td&gt;
+      &lt;td&gt;void foo(int x)&lt;/td&gt;
+      &lt;td&gt;Block scope&lt;/td&gt;
+      &lt;td&gt;Automatic duration&lt;/td&gt;
+      &lt;td&gt;No linkage&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Non-const global variable&lt;/td&gt;
+      &lt;td&gt;int g_x;&lt;/td&gt;
+      &lt;td&gt;File scope&lt;/td&gt;
+      &lt;td&gt;Static duration&lt;/td&gt;
+      &lt;td&gt;External linkage&lt;/td&gt;
+      &lt;td&gt;Initialized or uninitialized&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Static global variable&lt;/td&gt;
+      &lt;td&gt;static int g_x;&lt;/td&gt;
+      &lt;td&gt;File scope&lt;/td&gt;
+      &lt;td&gt;Static duration&lt;/td&gt;
+      &lt;td&gt;Internal linkage&lt;/td&gt;
+      &lt;td&gt;Initialized or uninitialized&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Const global variable&lt;/td&gt;
+      &lt;td&gt;const int g_x(1);&lt;/td&gt;
+      &lt;td&gt;File scope&lt;/td&gt;
+      &lt;td&gt;Static duration&lt;/td&gt;
+      &lt;td&gt;Internal linkage&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Extern const global variable&lt;/td&gt;
+      &lt;td&gt;extern const int g_x(1);&lt;/td&gt;
+      &lt;td&gt;File scope&lt;/td&gt;
+      &lt;td&gt;Static duration&lt;/td&gt;
+      &lt;td&gt;External linkage&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;Namespaces&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;In order to help avoid issues where two independent pieces of code have naming collisions with each other when used together, C++ allows us to declare our own namespaces via the &lt;strong&gt;namespace&lt;/strong&gt; keyword. Anything declared inside a user-defined namespace belongs to that namespace, not the global namespace.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;namespace Foo
+{
+    // This doSomething() belongs to namespace Foo
+    int doSomething(int x, int y)
+    {
+        return x + y;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Accessing a namespace with the scope resolution operator (::)&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int main(void)
+{
+    std::cout &amp;lt;&amp;lt; Foo::doSomething(4, 3);
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;The using keyword&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int main(void)
+{
+    using namespace Foo; // look in namespace Foo
+    std::cout &amp;lt;&amp;lt; doSomething(4, 3) &amp;lt;&amp;lt; std::endl; // calls Foo::doSomething()
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Multiple namespace blocks with the same name allowed&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;It’s legal to declare namespace blocks in multiple locations (even multiple times in the same file, if you can find a good reason for doing so). All declarations within the namespace block are considered part of the namespace.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Nested namespaces and namespace aliases&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;implicit-type-conversion-coercion&quot;&gt;Implicit type conversion (coercion)&lt;/h2&gt;
+
+&lt;p&gt;The process of converting a value from one data type to another is called a &lt;strong&gt;type conversion&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Implicit type conversion&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Implicit type conversion (also called automatic type conversion or coercion) is performed whenever one fundamental data type is expected, but a different fundamental data type is supplied, and the user does not explicitly tell the compiler how to perform this conversion (via a cast).&lt;/p&gt;
+
+&lt;p&gt;There are two basic types of implicit type conversion: promotions and conversions.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Numeric promotion&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Whenever a value from one type is converted into a value of a larger similar data type, this is called a &lt;strong&gt;numeric promotion&lt;/strong&gt; (or &lt;strong&gt;widening&lt;/strong&gt;)&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;long l(64); // widen the integer 64 into a long
+double d(0.12f); // promote the float 0.12 into a double
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Integral promotion&lt;/strong&gt; involves the conversion of integer types narrower than int (which includes bool, char, unsigned char, signed char, unsigned short, signed short) to an integer (if possible) or an unsigned int.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Floating point promotion&lt;/strong&gt; involves the conversion of a float to a double.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Numeric conversions&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;When we convert a value from a larger type to a similar smaller type, or between different types, this is called a &lt;strong&gt;numeric conversion&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;If operands of mixed types are used, the compiler will implicitly convert one operand to agree with the other using a process called &lt;strong&gt;usual arithmetic conversion&lt;/strong&gt;. To do this, it uses the following rules:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;If the operand is an integer, it undergoes integral promotion (as described above).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If the operands still do not match, then the compiler finds the highest priority operand and converts the other operand to match.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The priority of operands is as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;long double (highest)&lt;/li&gt;
+  &lt;li&gt;double&lt;/li&gt;
+  &lt;li&gt;float&lt;/li&gt;
+  &lt;li&gt;unsigned long long&lt;/li&gt;
+  &lt;li&gt;long long&lt;/li&gt;
+  &lt;li&gt;unsigned long&lt;/li&gt;
+  &lt;li&gt;long&lt;/li&gt;
+  &lt;li&gt;unsigned int&lt;/li&gt;
+  &lt;li&gt;int (lowest)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;typeid.name()&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Explicit type conversion (casting)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;A &lt;strong&gt;cast&lt;/strong&gt; represents an explicit request by the programmer to do a type conversion.&lt;/p&gt;
+
+&lt;p&gt;5 different types of casts: C-style casts, static casts, const casts, dynamic casts, and reinterpret casts.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;C-style casts&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;casts are done via the () operator, with the name of the type to cast to inside.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int i1 = 10;
+int i2 = 4;
+float f = (float)i1 / i2;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Because C-style casts are not checked by the compiler at compile time, C-style casts can be inherently misused, because they will let you do things that may not make sense, such as getting rid of a const or changing a data type without changing the underlying representation (leading to garbage results).&lt;/p&gt;
+
+&lt;p&gt;Rule: Avoid C-style casts&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;static_cast&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int i1 = 10;
+int i2 = 4;
+float f = static_cast&amp;lt;float&amp;gt;(i1) / i2;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The main advantage of static_cast is that it provides compile-time type checking, making it harder to make an inadvertent error. Static_cast is also (intentionally) less powerful than C-style casts, so you can’t inadvertently remove const or do other things you may not have intended to do.&lt;/p&gt;
+
+&lt;p&gt;Casting should be avoided if at all possible, because any time a cast is used, there is potential for trouble. But there are many times when it can not be avoided. In most of these cases, the C++ static_cast should be used instead of the C-style cast.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;std::string&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;a collection of sequential characters called a &lt;strong&gt;string&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;std::getline()&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;To read a full line of input into a string, you’re better off using the std::getline() function instead. std::getline() takes two parameters: the first is std::cin, and the second is your string variable.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;std::getline(std::cin, age);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Rule: If reading numeric values with std::cin, it’s a good idea to remove the extraneous newline using std::cin.ignore().&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;std::cin.ignore(32767, &#39;\n&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;enumerated-types&quot;&gt;Enumerated types&lt;/h2&gt;
+
+&lt;p&gt;An &lt;strong&gt;enumerated type&lt;/strong&gt; (also called an &lt;strong&gt;enumeration&lt;/strong&gt;) is a data type where every possible value is defined as a symbolic constant (called an &lt;strong&gt;enumerator&lt;/strong&gt;). Enumerations are declared via the &lt;strong&gt;enum&lt;/strong&gt; keyword.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Declare&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;enumeration&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;named&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Color&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Color&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Here&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;are&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;enumerators&lt;/span&gt;
+        &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;These&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;define&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;all&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;possible&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;values&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;can&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hold&lt;/span&gt;
+        &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Each&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;enumerator&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;separated&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;comma&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;semicolon&lt;/span&gt;
+        &lt;span class=&quot;no&quot;&gt;COLOR_BLACK&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;no&quot;&gt;COLOR_RED&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;no&quot;&gt;COLOR_BLUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;no&quot;&gt;COLOR_GREEN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;no&quot;&gt;COLOR_WHITE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;no&quot;&gt;COLOR_CYAN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;no&quot;&gt;COLOR_YELLOW&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;no&quot;&gt;COLOR_MAGENTA&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;maximum&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;compatibility&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;enumerator&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;should&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;have&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;comma&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;however&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;itself&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;must&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;semicolon&lt;/span&gt;
+
+    &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Define&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;few&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;variables&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;enumerated&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Color&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Color&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;paint&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;COLOR_WHITE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Color&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;house&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;COLOR_BLUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;it’s common to prefix enumerators with a standard prefix like ANIMAL_ or COLOR_, both to prevent naming conflicts and for code documentation purposes.&lt;/p&gt;
+
+&lt;p&gt;Best practice: Don’t assign specific values to your enumerators.&lt;/p&gt;
+
+&lt;p&gt;Rule: Don’t assign the same value to two enumerators in the same enumeration unless there’s a very good reason.&lt;/p&gt;
+
+&lt;p&gt;C++11 defines a new concept, the &lt;strong&gt;enum class&lt;/strong&gt; (also called a &lt;strong&gt;scoped enumeration&lt;/strong&gt;), which makes enumerations both strongly typed and strongly scoped. To make an enum class, we use the keyword class after the enum keyword.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;c1&quot;&gt;#include &amp;lt;iostream&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Color&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;no&quot;&gt;RED&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;no&quot;&gt;BLUE&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+        &lt;span class=&quot;no&quot;&gt;Color&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;BLUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;won&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;t work, because there&#39;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;no&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;implicit&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;conversion&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;int&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;static_cast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;will&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;typedefs&quot;&gt;Typedefs&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Typedefs&lt;/strong&gt; allow the programmer to create an alias for a data type, and use the aliased name instead of the actual type name.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;typedef double distance_t; // define distance_t as an alias for type double
+
+// The following two statements are equivalent:
+double howFar;
+distance_t howFar;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;typedef names are declared using a “_t” suffix. This helps indicate that they are types, not variables, and also helps prevent naming collisions with similarly named variables.&lt;/p&gt;
+
+&lt;p&gt;Using typedefs for legibility&lt;/p&gt;
+
+&lt;p&gt;Using typedefs for easier code maintenance&lt;/p&gt;
+
+&lt;p&gt;Platform independent coding&lt;/p&gt;
+
+&lt;p&gt;Using typedefs to make complex types simple&lt;/p&gt;
+
+&lt;p&gt;Rule: Use the using version of typedef instead of the typedef keyword if you compiler is C++11 compatible.&lt;/p&gt;
+
+&lt;h2 id=&quot;structs&quot;&gt;Structs&lt;/h2&gt;
+
+&lt;p&gt;An &lt;strong&gt;aggregate data&lt;/strong&gt; type is a data type that groups multiple individual variables together. One of the simplest aggregate data type is the struct.&lt;/p&gt;
+
+&lt;p&gt;A &lt;strong&gt;struct&lt;/strong&gt; (short for structure) allows us to group variables of mixed data types together into a single unit.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;struct Employee
+{
+    short id;
+    int age;
+    double wage;
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In order to access the individual members, we use the &lt;strong&gt;member selection operator&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Employee joe; // create an Employee struct for Joe
+joe.id = 14; // assign a value to member id within struct joe
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Initializing structs by assigning values member by member is a little cumbersome, so C++ supports a faster way to initialize structs using an &lt;strong&gt;initializer list&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Employee joe = { 1, 32, 60000.0 };
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Non-static member initialization&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;struct Triangle
+{
+    double length = 1.0;
+    double width = 1.0;
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;the-auto-keyword&quot;&gt;The auto keyword&lt;/h2&gt;
+
+&lt;p&gt;The auto keyword was a way to explicitly specify that a variable should have automatic duration:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int main()
+{
+    auto int foo(5); // explicitly specify that foo should have automatic duration
+
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;When initializing a variable, the auto keyword can be used in place of the variable type to tell the compiler to infer the variable’s type from the assignment’s type. This is called &lt;strong&gt;automatic type deduction&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;auto d = 5.0; // 5.0 is a double literal, so d will be type double
+auto i = 1 + 2; // 1 + 2 evaluates to an integer, so i will be type int
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Automatic type deduction for functions in C++14&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;auto add(int x, int y)
+{
+    return x + y;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;trailing return syntax&lt;/strong&gt; where the return type is specified after the rest of the function prototype.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;auto add(int x, int y) -&amp;gt; int;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Starting with C++11, the auto keyword can be used in place of a variable’s type when doing an initialization in order to perform automatic type deduction.&lt;/p&gt;
+
+&lt;p&gt;Other uses of the auto keyword should generally be avoided except on an as-needed basis.&lt;/p&gt;
+
+&lt;h2 id=&quot;quick-review&quot;&gt;Quick review&lt;/h2&gt;
+
+&lt;p&gt;A block of statements (aka. a compound statement) is treated by the compiler as if it were a single statement. These are placed between curly brackets ({ and }) and used pretty much everywhere.&lt;/p&gt;
+
+&lt;p&gt;Local variables are created when the block they are part of is entered, and destroyed when it is exited. They can only be accessed inside the block in which they are declared.&lt;/p&gt;
+
+&lt;p&gt;Global variables are created when the program starts, and are destroyed when it ends. They can be used anywhere in the program. Non-const global variables should generally be avoided because they are evil.&lt;/p&gt;
+
+&lt;p&gt;The static keyword can be used to give a global variable internal linkage, so it can only be used in the file in which it is declared. It can also be used to give a local variable static duration, which means the local variable retains its value, even after it goes out of scope.&lt;/p&gt;
+
+&lt;p&gt;Namespaces are an area in which all names are guaranteed to be unique. Use of namespace is a great way to avoid naming collisions. Avoid use of “using statements” outside of functions.&lt;/p&gt;
+
+&lt;p&gt;Implicit type conversion happens when one type is converted into another type without using a cast. Explicit type conversion happens when one type is converted to another using a cast. In some cases, this is totally safe, and in others, data may be lost. Avoid C-style casts and use static_cast instead.&lt;/p&gt;
+
+&lt;p&gt;std::string offers an easy way to deal with text strings. Strings are always placed between double quotes.&lt;/p&gt;
+
+&lt;p&gt;Enumerated types let us define our own type where all of the possible values are enumerated. These are great for categorizing things. Enum classes work like enums but offer more type safety, and should be used instead of standard enums if your compiler is C++11 capable.&lt;/p&gt;
+
+&lt;p&gt;Typedefs allow us to create an alias for a type’s name. Fixed width integers are implemented using typedefs. Typedefs are useful for giving simple names to complicated types.&lt;/p&gt;
+
+&lt;p&gt;And finally, structs offer us a way to group related variables into a single structure and access them using the member selection operator (.). Object-oriented programming builds heavily on top of these, so if you learn one thing from this chapter, make sure it’s this one.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 25 May 2016 08:08:58 -0700</pubDate>
+        <link>http://heyl0822.github.io//_site/c++/2016/05/25/learn_c++_ch4_variable_scope_and_more_types.html</link>
+        <guid isPermaLink="true">http://heyl0822.github.io//_site/c++/2016/05/25/learn_c++_ch4_variable_scope_and_more_types.html</guid>
+        
+        
+        <category>c++</category>
+        
+      </item>
     
       <item>
         <title>Learn C++ Ch3 Operators</title>
